@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>mCC: Novo</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/fontawesome/css/all.min.css" rel="stylesheet">
+        <link href="assets/css/googlefonts/carroisgothic.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/img/favicon.png" rel="shortcut icon" type="image/png">
+    </head>
+    <body>
+        <div class="box container-fluid">
+            <form action="Controller?action=cadastrarMCC" method="post">
+                <div class="row">
+                    <div class="box col-md-2 col-sm-12">
+                        <input autofocus class="form-control" id="codigo-disciplina" name="codigo-disciplina" placeholder="Código" type="number">
+                    </div>
+                    <div class="box col-md-10 col-sm-12">
+                        <input class="form-control" id="nome-disciplina" name="nome-disciplina" placeholder="Disciplina" type="text">
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="box">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#sites">
+                                    <i class="fas fa-globe fa-2x"></i><span class="truncate">Sites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#videos">
+                                    <i class="fas fa-play-circle fa-2x"></i><span class="truncate">Vídeos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#imagens">
+                                    <i class="fas fa-image fa-2x"></i><span class="truncate">Imagens</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#apresentacoes">
+                                    <i class="fas fa-chalkboard fa-2x"></i><span class="truncate">Apresentações</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#livros">
+                                    <i class="fas fa-book fa-2x"></i><span class="truncate">Livros</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#leitura">
+                                    <i class="far fa-file-alt fa-2x"></i><span class="truncate">Leitura</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#filmes">
+                                    <i class="fas fa-film fa-2x"></i><span class="truncate">Filmes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#visite">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i><span class="truncate">Visite</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#tecnologias">
+                                    <i class="fas fa-cogs fa-2x"></i><span class="truncate">Tecnologias</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="sites">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a href="#" id="novo-sites-bg">
+                                                        <span class="logo"><img alt="" src="assets/img/blogger-ico.png"></span>Blogger
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a href="#" id="novo-sites">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="videos">
+                                <div class="content">                                    
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-videos-yt">
+                                                        <span class="logo"><img alt="" src="assets/img/youtube-ico.png"></span>YouTube
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-videos-vm">
+                                                        <span class="logo"><img alt="" src="assets/img/vimeo-ico.png"></span>Vimeo
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-videos-dm">
+                                                        <span class="logo"><img alt="" src="assets/img/dailymotion-ico.png"></span>Dailymotion
+                                                    </a>
+                                                </li>
+                                                <li role="separator" class="divider"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-videos">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="imagens">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-imagens-ig">
+                                                        <span class="logo"><img alt="" src="assets/img/instagram-ico.png"></span>Instagram
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-imagens-pr">
+                                                        <span class="logo"><img alt="" src="assets/img/pinterest-ico.png"></span>Pinterest
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-imagens-fc">
+                                                        <span class="logo"><img alt="" src="assets/img/flickr-ico.png"></span>Flickr
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-imagens-is">
+                                                        <span class="logo"><img alt="" src="assets/img/imageshack-ico.png"></span>ImageShack
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-imagens">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="apresentacoes">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-apresentacoes-ss">
+                                                        <span class="logo"><img alt="" src="assets/img/slideshare-ico.png"></span>SlideShare
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-apresentacoes">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="livros">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-livros-ol">
+                                                        <span class="logo"><img alt="" src="assets/img/open-library-ico.png"></span>Open Library
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-livros-pg">
+                                                        <span class="logo"><img alt="" src="assets/img/project-gutenberg-ico.png"></span>Project Gutenberg
+                                                    </a>
+                                                </li>                                                
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-livros-wb">
+                                                        <span class="logo"><img alt="" src="assets/img/wikibooks-ico.png"></span>Wikibooks
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-livros-gb">
+                                                        <span class="logo"><img alt="" src="assets/img/google-books-ico.png"></span>Google Books
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-livros">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="leitura">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#">
+                                                        Artigos, Periódicos e Bases de Dados
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-se">
+                                                        <span class="logo"><img alt="" src="assets/img/scielo-ico.png"></span>SciELO - Scientific Electronic Library Online
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-ei">
+                                                        <span class="logo"><img alt="" src="assets/img/eric-ico.png"></span>ERIC - Education Resources Information Center
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura-gs">
+                                                        <span class="logo"><img alt="" src="assets/img/google-scholar-ico.png"></span>Google Scholar
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura-sc">
+                                                        <span class="logo"><img alt="" src="assets/img/semantic-scholar-ico.png"></span>Semantic Scholar
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-dj">
+                                                        <span class="logo"><img alt="" src="assets/img/doaj-ico.ico"></span>DOAJ - Directory of Open Access Journals
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura-ps">
+                                                        <span class="logo"><img alt="" src="assets/img/plos-ico.png"></span>PLOS - Public Library of Science
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura-br">
+                                                        <span class="logo"><img alt="" src="assets/img/biorxiv-ico.ico"></span>BioRxiv
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-gf">
+                                                        <span class="logo"><img alt="" src="assets/img/gbif-ico.png"></span>GBIF - Global Biodiversity Information Facility
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#">
+                                                        Bibliotecas Digitais
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura-ep">
+                                                        <span class="logo"><img alt="" src="assets/img/europeana-ico.png"></span>Europeana
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-si">
+                                                        <span class="logo"><img alt="" src="assets/img/smithsonian-institution-ico.png"></span>Smithsonian Institution (Open Access)
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="disabled truncate" href="#" id="novo-leitura-wdl">
+                                                        <span class="logo"><img alt="" src="assets/img/world-digital-library-ico.png"></span>World Digital Library
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-leitura">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="filmes">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <button class="btn btn-success btn-right" id="novo-filmes" type="button">
+                                            <i class="fas fa-plus-circle"></i>Novo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="visite">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-visite-gm">
+                                                        <span class="logo"><img alt="" src="assets/img/google-maps-ico.png"></span>Google Maps
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-visite">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tecnologias">
+                                <div class="content">
+                                    <div class="btn-space">
+                                        <div class="btn-group btn-right">
+                                            <button aria-haspopup="true" aria-expanded="false" class="btn btn-success dropdown-toggle" data-toggle="dropdown" type="button">
+                                                <i class="fas fa-plus-circle"></i>Novo
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-tecnologias-sf">
+                                                        <span class="logo"><img alt="" src="assets/img/sketchfab-ico.png"></span>Sketchfab
+                                                    </a>
+                                                </li>
+                                                <li class="divider" role="separator"></li>
+                                                <li>
+                                                    <a class="disabled" href="#" id="novo-tecnologias">Outro</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-right box">
+                        <button class="btn btn-danger disabled" type="button">
+                            <i class="fas fa-times-circle"></i>Cancelar
+                        </button>
+                        <button class="btn btn-success disabled" type="submit">
+                            <i class="fas fa-check-circle"></i>Gravar
+                        </button>                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
