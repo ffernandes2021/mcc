@@ -1,27 +1,29 @@
-# mcc
+# mCC
 
 ## Sobre
    
-   Este é um projeto acadêmico chamado **mCC**, cuja sigla é **Materiais Complementares Compartilhados**. Nele proponho o desenvolvimento de uma aplicação Java Web, na qual é possível cadastrar, excluir, listar e compartilhar mCC's, estes, por sua vez, formados por mídias como vídeos, imagens, artigos, livros, links, filmes, áudios, entre outros.
+   Este é um projeto acadêmico chamado **mCC**, cuja sigla significa **Materiais Complementares Compartilhados**. Nele proponho o desenvolvimento de uma plataforma web, na qual é possível cadastrar, excluir, listar e compartilhar mCC's, estes, por sua vez, formados por mídias como vídeos, imagens, artigos, livros, links, filmes, áudios, entre outros.
 
-   Este é um projeto em andamento, e semanalmente é incrementado e compartilhado aqui no GitHub.
+   Este é um projeto em **andamento**, e semanalmente é incrementado e compartilhado aqui no GitHub.
 
    É um projeto **open source**, sob a licença [**GNU GPLv3**](https://www.gnu.org/licenses/gpl-3.0.pt-br.html). Assim, pode ser baixado, modificado, mas distribuído apenas sob a mesma licença.
    
-   É um projeto que envolve inúmeras tecnologias, e incluirá programação front-end, back-end, além de banco de dados NoSQL. Comentarei todos os commits aqui mesmo com vocês para um melhor entendimento do projeto.
+   É um projeto que envolve inúmeras tecnologias, tais como tecnologias front-end, back-end, base de dados NoSQL e chamadas REST API's. Assim sendo, comentarei todos os commits aqui mesmo com vocês para um melhor entendimento do projeto, bem como sua evolução.
 
 ## Commit
 
-    Commit 1:
-    - Texto inicial do README.md;
-    - Desenvolvimento de interface (estática) inicial;
-    - Desenvolvimento de componentes de interface (dinâmicos) com jQuery (JS);
-    - GET de blogs & posts do Blogger, utilizando requisições AJAX/JSON com jQuery para REST API (Blogger API 3.0).
+   **Commit 1:**
 
-    Commit 2:
-    - Atualização do README.md;
-    - GET de blogs & posts do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
+   - Texto inicial do README.md; 
+   - Desenvolvimento de interface (estática) inicial; 
+   - Desenvolvimento de componentes de interface (dinâmicos) com jQuery (JS); 
+   - GET de blogs & posts do Blogger, utilizando requisições AJAX/JSON com jQuery para REST API (Blogger API 3.0).
 
+   **Commit 2:**
+   
+   - Atualização do README.md; 
+   - GET de blogs & posts do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
+   
 ## Tecnologias
 
     **Front-end**:
