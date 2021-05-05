@@ -13,7 +13,7 @@ body {
     font-family: "Carrois Gothic";    
 }
 
-.box {
+.box1 {
     padding: 10px;
 }
 
@@ -59,7 +59,17 @@ a:hover,
 .it,
 .info-content,
 .content-elemento > div:first-child {
-    border: solid 1px #CCC;
+    border: solid 1px #CCC;    
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.content,
+.it,
+.info-content,
+.content-elemento > div:first-child,
+iframe {
     border-radius: 4px;
 }
 
@@ -210,4 +220,25 @@ textarea {
 .btn-default.active {
     background-color: #EEE !important;
     border-color: #ADADAD !important;
+}
+
+.responsive-iframe1 {
+    padding: 56.25% 0 0 0;
+    position: relative;
+}
+.responsive-iframe1 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    border: none;
+}
+
+.box2 {
+    padding-left: 0;
+    padding-right: 0;
 }
