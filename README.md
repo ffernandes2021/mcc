@@ -20,7 +20,12 @@
 
     Commit 2:
     - Atualização do README.md;
-    - GET de blogs & posts do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
+    - GET de vídeos & playlists do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
+
+    Commit 3:
+    - Atualização do README.md;
+    - GET de vídeos & playlists do Vimeo, utilizando requisições AJAX/JSON com jQuery para REST API (oEmbed).
+    - GET de vídeos & playlists do Dailymotion, utilizando requisições AJAX/JSON com jQuery para REST API (Dailymotion Data API).
 
 ## Tecnologias
 
@@ -29,7 +34,7 @@
         **Fonte:** Font Awesome 5.15.3 & Google Fonts (Carrois Gothic)
         **Framework:** Twitter Bootstrap 3.4.1
         **Biblioteca JS:** jQuery 3.4.1
-        **API & relacionados:** XMLHttpRequest, AJAX, JSON, JSONP, Blogger API 3.0, YouTube Data API 3.0
+        **API & relacionados:** XMLHttpRequest, AJAX, JSON, JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed e Dailymotion Data API.
     **Back-end:**
         **Java Web:** JavaBeans, DAO e Servlet API 2.5 (MVC Pattern)
         **Descritor:** web.xml
@@ -59,7 +64,3 @@
    
     1. Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
     2. Youtube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
-
-## Contato
-
-    e-mail: 
