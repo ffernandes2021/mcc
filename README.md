@@ -92,10 +92,5 @@
 
    Ao fazer o download deste projeto, por favor, obtenha suas próprias API Keys nos links abaixo e substitua pelos valores correspondentes no arquivo **script.js**. 
    
-<<<<<<< HEAD
-    1. Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
-    2. Youtube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
-=======
    - Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
    - YouTube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
->>>>>>> 76e19f31428996580cc0fbe2334d0dba49b2ec82
