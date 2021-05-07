@@ -65,6 +65,7 @@
 ## API keys
 
    Ao fazer o download deste projeto, por favor, obtenha suas próprias API Keys nos links abaixo e substitua pelos valores correspondentes no arquivo **script.js**. 
-  
+   
    - Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
    - YouTube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
+
