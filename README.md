@@ -14,49 +14,24 @@
 
    **Commit 1:**
 
-<<<<<<< HEAD
-    Commit 2:
-    - Atualização do README.md;
-    - GET de vídeos & playlists do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
-
-    Commit 3:
-    - Atualização do README.md;
-    - GET de vídeos & playlists do Vimeo, utilizando requisições AJAX/JSON com jQuery para REST API (oEmbed).
-    - GET de vídeos & playlists do Dailymotion, utilizando requisições AJAX/JSON com jQuery para REST API (Dailymotion Data API).
-=======
    - Texto inicial do README.md; 
    - Desenvolvimento de interface (estática) inicial; 
    - Desenvolvimento de componentes de interface (dinâmicos) com jQuery (JS); 
    - GET de blogs e posts do Blogger, utilizando requisições AJAX/JSON com jQuery para REST API (Blogger API 3.0).
->>>>>>> 76e19f31428996580cc0fbe2334d0dba49b2ec82
 
    **Commit 2:**
    
    - Atualização do README.md; 
    - GET de vídeos e playlists do YouTube, utilizando requisições AJAX/JSON com jQuery para REST API (YouTube Data API 3.0).
+
+   **Commit 3:**
+
+    - Atualização do README.md;
+    - GET de vídeos & playlists do Vimeo, utilizando requisições AJAX/JSON com jQuery para REST API (oEmbed).
+    - GET de vídeos & playlists do Dailymotion, utilizando requisições AJAX/JSON com jQuery para REST API (Dailymotion Data API).
    
 ## Tecnologias
-<<<<<<< HEAD
 
-    **Front-end**:
-        **Linguagem:** HTML 5, CSS 3 & JSP (Scriptlets e JSTL)
-        **Fonte:** Font Awesome 5.15.3 & Google Fonts (Carrois Gothic)
-        **Framework:** Twitter Bootstrap 3.4.1
-        **Biblioteca JS:** jQuery 3.4.1
-        **API & relacionados:** XMLHttpRequest, AJAX, JSON, JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed e Dailymotion Data API.
-    **Back-end:**
-        **Java Web:** JavaBeans, DAO e Servlet API 2.5 (MVC Pattern)
-        **Descritor:** web.xml
-    **Database:** MongoDB Server & Shell 4.4.3
-    **Server:** Apache Tomcat 8.0.27.0 (Port: 8084)
-    **Builder:** Apache Ant 1.9.7
-    **Platform:** Oracle Java EE 7 (OpenJDK 8)
-    **IDE:** Apache NetBeans IDE 8.2
-    **OS:** Canonical Linux Ubuntu 20.10
-    **Browser:** Google Chrome 90.0.4430.93 (64 bits) & Mozilla Firefox 88.0 (64 bits)
-
-=======
-   
    **Front-end:**
    
    - **Linguagem:** HTML 5, CSS 3 e JSP (Scriptlets e JSTL)
@@ -77,7 +52,6 @@
    - **IDE:** Apache NetBeans IDE 8.2
    - **OS:** Canonical Linux Ubuntu 20.10
    
->>>>>>> 76e19f31428996580cc0fbe2334d0dba49b2ec82
 ## Implantação
 
    1. Instale o [OpenJDK 8+](https://openjdk.java.net/) (ou [JDK 8+](https://www.oracle.com/java/), se preferir) e defina as variáveis de ambiente do Java;
@@ -91,11 +65,6 @@
 ## API keys
 
    Ao fazer o download deste projeto, por favor, obtenha suas próprias API Keys nos links abaixo e substitua pelos valores correspondentes no arquivo **script.js**. 
-   
-<<<<<<< HEAD
-    1. Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
-    2. Youtube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
-=======
+  
    - Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
    - YouTube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
->>>>>>> 76e19f31428996580cc0fbe2334d0dba49b2ec82
