@@ -29,6 +29,11 @@
    - Atualização do README.md;
    - GET de vídeos & playlists do Vimeo, utilizando requisições AJAX/JSON com jQuery para REST API (oEmbed).
    - GET de vídeos & playlists do Dailymotion, utilizando requisições AJAX/JSON com jQuery para REST API (Dailymotion Data API).
+
+   **Commit 4:**
+   
+   - Atualização do README.md; 
+   - GET de modelos e coleções do Sketchfab, utilizando requisições AJAX/JSON com jQuery para REST API (Sketchfab Data API 3.0).
    
 ## Tecnologias
 
@@ -38,7 +43,7 @@
    - **Fonte:** Font Awesome 5.15.3 e Google Fonts (Carrois Gothic)
    - **Framework:** Twitter Bootstrap 3.4.1
    - **Biblioteca JS:** jQuery 3.4.1
-   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed e Dailymotion Data API.
+   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed, Dailymotion Data API e Sketchfab Data API 3.0.
    - **Browser:** Google Chrome 90.0.4430.93 (64 bits) e Mozilla Firefox 88.0 (64 bits)
    
    **Back-end, Database, Infra e Outros:**

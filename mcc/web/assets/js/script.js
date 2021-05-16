@@ -97,6 +97,18 @@ $("#novo-videos-dm").click(function () {
     $("#videos .content").append(videosDm);    
 });
 
+// novo: adiciona elemento (Tecnologias: Sketchfab)
+
+let infoSf = "info-sf", infoNumberSf = 1;
+
+$("#novo-tecnologias-sf").click(function () {
+    if ($(("#info-sf").concat(infoNumberSf)).length) { 
+        infoNumberSf++;
+    }    
+    let tecnologiasSf = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Modelo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active modelo-id\" type=\"button\">Modelo</button><button class=\"btn btn-default colecao-id\" type=\"button\">Coleção</button></div><div class=\"btn-group\"><button aria-controls="+infoSf.concat(infoNumberSf)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoSf.concat(infoNumberSf)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-sf\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoSf.concat(infoNumberSf)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/3d-models/modelName-[modelID]<br><span>&bull;</span>https://sketchfab.com/userName/collections/collectionName<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo &#62; Modelo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>689199c40bb44602b8c44ac9a059f613</p><p><strong>Exemplo &#62; Coleção ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>84c476a3367a418ca31de3e15113d6b3</p><hr><p class=\"info-note\">1. Necessário clicar em EMBED para obter o ID da coleção, este, por meio do SRC https://sketchfab.com/playlists/embed?collection=[collectionID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#tecnologias .content").append(tecnologiasSf);
+});
+
 // selecionar (Sites: Blogger): blog URL
 
 $(document).on("click", ".blog-id", function () {
@@ -130,6 +142,24 @@ $(document).on("click", ".playlist-id", function () {
     $(this).addClass("active");
     $(this).siblings().removeClass("active");      
     $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Playlist: ID");
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Tecnologias: Sketchfab): modelo ID
+
+$(document).on("click", ".modelo-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");    
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Modelo: ID");    
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Tecnologias: Sketchfab): coleção ID
+
+$(document).on("click", ".colecao-id", function () {
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");      
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Coleção: ID");
     $(this).closest(".btn-toolbar").prev().find("input").focus();
 });
 
@@ -265,6 +295,37 @@ $(document).on("click", ".search-dm", function () {
             getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad);
         }       
     }
+});
+
+// procurar (Tecnologias: Sketchfab): modelo e coleção
+
+$(document).on("click", ".search-sf", function () {
+    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
+    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
+    localButton1 = $(this).closest(".btn-toolbar").find(".modelo-id");
+    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
+    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
+    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
+    localLoad = $(this).closest(".it");
+    localInfo = $(this).closest(".btn-toolbar").next();    
+    localErro.html("");
+    localInfo.collapse("hide");
+    localButtonInfo.removeClass("active");    
+    if(valor1 === ""){
+        if(localButton1.hasClass("active")){
+            localErro.html(erro.concat("É necessário fornecer o ID do modelo para que a pesquisa seja realizada.</span></div>"));
+        } else {
+            localErro.html(erro.concat("É necessário fornecer o ID da coleção para que a pesquisa seja realizada.</span></div>"));
+        }
+        localInput1.focus();
+    } else {
+        localLoad.addClass("loading");        
+        if(localButton1.hasClass("active")){
+            getSketchfabModelo(valor1, localConteudo, localErro, localLoad);
+        } else {
+            getSketchfabColecao(valor1, localConteudo, localErro, localLoad);
+        }       
+    }    
 });
 
 // info: exibe/oculta info do elemento
@@ -623,6 +684,83 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
                 break;
             case 404:
                 localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não encontrada.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
+// funções (Sketchfab: retorna modelo)
+
+let nsfEmbed = "tecnologias-sf-embed", nsfNumberEmbed = 1;
+let nsfLogo = "tecnologias-sf-logo", nsfNumberLogo = 1;
+let nsfTitulo = "tecnologias-sf-titulo", nsfNumberTitulo = 1;
+let nsfDescricao = "tecnologias-sf-descricao", nsfNumberDescricao = 1;
+let nsfUrl = "tecnologias-sf-url", nsfNumberUrl = 1;
+let nsfCanal = "tecnologias-sf-canal", nsfNumberCanal = 1;
+
+function getSketchfabModelo(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.sketchfab.com/v3/models/"+valor1, function(){})
+    .done(function(data){        
+        if ($("[name=\"videos-sf-embed"+nsfNumberEmbed+"\"]").length) { 
+            nsfNumberEmbed++;
+            nsfNumberLogo++; 
+            nsfNumberTitulo++; 
+            nsfNumberDescricao++; 
+            nsfNumberUrl++; 
+            nsfNumberCanal++; 
+        }        
+        embed = "<iframe width=\"640\" height=\"480\" src=\""+data.embedUrl+"\" allow=\"autoplay; fullscreen; vr\" allowfullscreen></iframe>";
+        logo = "<img alt=\"\" src=\"assets/img/sketchfab.png\">";
+        conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nsfEmbed.concat(nsfNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nsfLogo.concat(nsfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nsfTitulo.concat(nsfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.name.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nsfDescricao.concat(nsfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfUrl.concat(nsfNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.viewerUrl+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfCanal.concat(nsfNumberCanal)+" placeholder=\"Canal\" type=\"text\" value="+data.user.displayName.replace(/\s/g,"&#160;")+"></div></div></div></div>";       
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Modelo não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
+// funções (Sketchfab: retorna coleção)
+
+function getSketchfabColecao(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.sketchfab.com/v3/collections/"+valor1, function(){})
+    .done(function(data){        
+        if ($("[name=\"videos-sf-embed"+nsfNumberEmbed+"\"]").length) { 
+            nsfNumberEmbed++;
+            nsfNumberLogo++; 
+            nsfNumberTitulo++; 
+            nsfNumberDescricao++; 
+            nsfNumberUrl++; 
+            nsfNumberCanal++; 
+        }        
+        embed = "<iframe width=\"640\" height=\"480\" src=\""+data.embedUrl+"\" allow=\"autoplay; fullscreen; vr\" allowfullscreen></iframe>";
+        logo = "<img alt=\"\" src=\"assets/img/sketchfab.png\">";
+        conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nsfEmbed.concat(nsfNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nsfLogo.concat(nsfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nsfTitulo.concat(nsfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.name.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nsfDescricao.concat(nsfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfUrl.concat(nsfNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.user.profileUrl.concat("/collections/").concat(data.slug)+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfCanal.concat(nsfNumberCanal)+" placeholder=\"Canal\" type=\"text\" value="+data.user.displayName.replace(/\s/g,"&#160;")+"></div></div></div></div>";       
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Coleção não encontrada.</span></div>"));
                 break;
             default:                    
                 localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
