@@ -97,6 +97,30 @@ $("#novo-videos-dm").click(function () {
     $("#videos .content").append(videosDm);    
 });
 
+// novo: adiciona elemento (Leitura: PLOS)
+
+let infoPs = "info-ps", infoNumberPs = 1;
+
+$("#novo-leitura-ps").click(function () {
+    if ($(("#info-ps").concat(infoNumberPs)).length) { 
+        infoNumberPs++; 
+    }
+    let leituraPs = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoPs.concat(infoNumberPs)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoPs.concat(infoNumberPs)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-ps\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoPs.concat(infoNumberPs)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://plos.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://journals.plos.org/plosone/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosbiology/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/ploscompbiol/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosgenetics/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosmedicine/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosntds/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plospathogens/article?id=[articleID]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1371/journal.pone.0239612<br><span>&bull;</span>10.1371/journal.pbio.3000859<br><span>&bull;</span>10.1371/journal.pcbi.1007406<br><span>&bull;</span>10.1371/journal.pgen.1008928<br><span>&bull;</span>10.1371/journal.pmed.1003212<br><span>&bull;</span>10.1371/journal.pntd.0008428<br><span>&bull;</span>10.1371/journal.ppat.1008882</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraPs);
+});
+
+// novo: adiciona elemento (Leitura: bioRxiv)
+
+let infoBr = "info-br", infoNumberBr = 1;
+
+$("#novo-leitura-br").click(function () {
+    if ($(("#info-br").concat(infoNumberBr)).length) { 
+        infoNumberBr++; 
+    }
+    let leituraBr = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoBr.concat(infoNumberBr)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoBr.concat(infoNumberBr)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-br\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoBr.concat(infoNumberBr)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/content/[articleID]<sup>[1]</sup>[versionNumber]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1101/2020.10.09.333211</p><hr><p class=\"info-note\">1. Também é possível obter o ID do artigo na URL, este, por meio do DOI number. Exemplo: https://doi.org/[articleID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraBr);
+});
+
 // novo: adiciona elemento (Tecnologias: Sketchfab)
 
 let infoSf = "info-sf", infoNumberSf = 1;
@@ -297,6 +321,50 @@ $(document).on("click", ".search-dm", function () {
     }
 });
 
+// procurar (Leitura: PLOS): artigo
+
+$(document).on("click", ".search-ps", function () {
+    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
+    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
+    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
+    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
+    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
+    localLoad = $(this).closest(".it");
+    localInfo = $(this).closest(".btn-toolbar").next();    
+    localErro.html("");
+    localInfo.collapse("hide");
+    localButtonInfo.removeClass("active");
+    if(valor1 === ""){
+        localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
+        localInput1.focus();
+    } else {
+        localLoad.addClass("loading");
+        getPlosArtigo(valor1);        
+    }    
+});
+
+// procurar (Leitura: bioRxiv): artigo
+
+$(document).on("click", ".search-br", function () {
+    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
+    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
+    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
+    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
+    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
+    localLoad = $(this).closest(".it");
+    localInfo = $(this).closest(".btn-toolbar").next();    
+    localErro.html("");
+    localInfo.collapse("hide");
+    localButtonInfo.removeClass("active");
+    if(valor1 === ""){
+        localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
+        localInput1.focus();
+    } else {
+        localLoad.addClass("loading");
+        getBiorxivArtigo(valor1, localConteudo, localErro, localLoad);        
+    }    
+});
+
 // procurar (Tecnologias: Sketchfab): modelo e coleção
 
 $(document).on("click", ".search-sf", function () {
@@ -469,6 +537,7 @@ function getYoutubeVideo(valor1, localConteudo, localErro, localLoad){
             localConteudo.html(conteudo);
             localConteudo.css("display","block");
         } else {
+            localConteudo.css("display","none");
             localErro.html(erro.concat("HTTP 404: Vídeo não encontrado.</span></div>"));
         }
     })
@@ -510,6 +579,7 @@ function getYoutubePlaylist(valor1, localConteudo, localErro, localLoad){
             localConteudo.html(conteudo);
             localConteudo.css("display","block");
         } else {
+            localConteudo.css("display","none");
             localErro.html(erro.concat("HTTP 404: Playlist não encontrada.</span></div>"));                
         }
     })
@@ -670,7 +740,7 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
             ndmNumberUrl++; 
             ndmNumberCanal++; 
         }
-        embed = "<iframe width=\"640\" height=\"360\" src=\"https://www.dailymotion.com/embed/playlist/"+valor1+"\" allowfullscreen></iframe>";
+        embed = "<iframe allowfullscreen height=\"360\" src=\"https://www.dailymotion.com/embed/playlist/"+valor1+"\" width=\"640\"></iframe>";
         logo = "<img alt=\"\" src=\"assets/img/dailymotion.png\">";
         conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+ndmEmbed.concat(ndmNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+ndmLogo.concat(ndmNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ndmTitulo.concat(ndmNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.name.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ndmDescricao.concat(ndmNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndmUrl.concat(ndmNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.dailymotion.com/playlist/"+valor1+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndmCanal.concat(ndmNumberCanal)+" placeholder=\"Canal\" type=\"text\" value="+data["owner.screenname"].replace(/\s/g,"&#160;")+"></div></div></div></div>";       
         localConteudo.html(conteudo);
@@ -695,6 +765,123 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
     });     
 }
 
+// funções (PLOS: retorna artigo)
+
+let npsLogo = "leitura-ps-logo", npsNumberLogo = 1;
+let npsTitulo = "leitura-ps-titulo", npsNumberTitulo = 1;
+let npsDescricao = "leitura-ps-descricao", npsNumberDescricao = 1;
+let npsUrl = "leitura-ps-url", npsNumberUrl = 1;
+let npsAutor = "leitura-ps-autor", npsNumberAutor = 1;
+let npsNomePeriodico = "leitura-ps-nome-periodico", npsNumberNomePeriodico = 1;
+
+function getPlosArtigo(valor1){
+    $.ajax({
+        dataType: "jsonp",        
+        url: "http://api.plos.org/search?q=id:"+valor1+"&fl=id,title,author,abstract,journal&wt=json&api_key=qKpye1hapVdZuXshd-tt&json.wrf=callbackPlos",
+        type: "GET"
+    });
+}
+
+function callbackPlos(data){
+    if(data.response.numFound > 0){
+        let autores = [], url;
+        for(let i = 0; i < data.response.docs[0].author.length; i++){            
+            autores.push(data.response.docs[0].author[i]);
+        }
+        switch(data.response.docs[0].journal){                            
+            case "PLOS ONE":                                
+                url = "https://journals.plos.org/plosone/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Biology":
+                url = "https://journals.plos.org/plosbiology/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Computational Biology":
+                url = "https://journals.plos.org/ploscompbiol/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Genetics":
+                url = "https://journals.plos.org/plosgenetics/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Medicine":
+                url = "https://journals.plos.org/plosmedicine/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Neglected Tropical Diseases":
+                url = "https://journals.plos.org/plosntds/article?id="+data.response.docs[0].id;
+                break;
+            case "PLOS Pathogens":
+                url = "https://journals.plos.org/plospathogens/article?id="+data.response.docs[0].id;
+                break;
+        }        
+        if ($("[name=\"leitura-ps-titulo"+npsNumberLogo+"\"]").length) { 
+            npsNumberLogo++; 
+            npsNumberTitulo++; 
+            npsNumberDescricao++; 
+            npsNumberUrl++; 
+            npsNumberAutor++; 
+            npsNumberNomePeriodico++; 
+        }        
+        logo = "<img alt=\"\" src=\"assets/img/plos.png\">";
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+npsLogo.concat(npsNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+npsTitulo.concat(npsNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.response.docs[0].title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+npsDescricao.concat(npsNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.response.docs[0].abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+npsUrl.concat(npsNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+url+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+npsAutor.concat(npsNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"box1\"><input class=\"form-control truncate\" name="+npsNomePeriodico.concat(npsNumberNomePeriodico)+" placeholder=\"Periódico\" type=\"text\" value="+data.response.docs[0].journal.replace(/\s/g,"&#160;")+"></div></div>";
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+        localLoad.removeClass("loading");         
+    } else {
+        localConteudo.css("display","none");
+        localErro.html(erro.concat("HTTP 404: Artigo não encontrado.</span></div>"));
+        localLoad.removeClass("loading");
+    }    
+}
+
+// funções (BioRxiv: retorna artigo)
+
+let nbrEmbed = "leitura-br-embed", nbrNumberEmbed = 1;
+let nbrLogo = "leitura-br-logo", nbrNumberLogo = 1;
+let nbrTitulo = "leitura-br-titulo", nbrNumberTitulo = 1;
+let nbrDescricao = "leitura-br-descricao", nbrNumberDescricao = 1;
+let nbrUrl = "leitura-br-url", nbrNumberUrl = 1;
+let nbrAutor = "leitura-br-autor", nbrNumberAutor = 1;
+let nbrTipoPublicacao = "leitura-br-tipo-publicacao", nbrNumberTipoPublicacao = 1; 
+let nbrNomeInfoPeriodico = "leitura-br-nome-info-periodico", nbrNumberNomeInfoPeriodico = 1;
+
+function getBiorxivArtigo(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.biorxiv.org/details/biorxiv/"+valor1, function(){})
+    .done(function(data){         
+        try {            
+            if ($("[name=\"leitura-br-embed"+nbrEmbed+"\"]").length) {
+                nbrEmbed++;
+                nbrLogo++;
+                nbrTitulo++; 
+                nbrDescricao++;
+                nbrUrl++;
+                nbrAutor++;
+                nbrTipoPublicacao++;
+                nbrNomeInfoPeriodico++;  
+            }            
+            embed = "<iframe allowfullscreen height=\"360\" src=\"https://www.biorxiv.org/content/"+data.collection[0].doi+"v"+data.collection[0].version+".full.pdf\" width=\"640\"></iframe>";
+            logo = "<img alt=\"\" src=\"assets/img/biorxiv.png\">";
+            conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nbrEmbed.concat(nbrNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1 box2\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nbrLogo.concat(nbrNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nbrTitulo.concat(nbrNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.collection[0].title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nbrDescricao.concat(nbrNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.collection[0].abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrUrl.concat(nbrNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.biorxiv.org/content/"+data.collection[0].doi+"v"+data.collection[0].version+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrAutor.concat(nbrNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+data.collection[0].authors.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrTipoPublicacao.concat(nbrNumberTipoPublicacao)+" placeholder=\"Tipo de publicação\" type=\"text\" value="+data.collection[0].category.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrNomeInfoPeriodico.concat(nbrNumberNomeInfoPeriodico)+" placeholder=\"Periódico e Data\" type=\"text\" value="+data.collection[0].published.replace(/\s/g,"&#160;")+",&#160;"+data.collection[0].date+"></div></div></div></div>";   
+            localConteudo.html(conteudo);
+            localConteudo.css("display","block");
+        } catch(e){
+            localConteudo.css("display","none");
+            localErro.html(erro.concat("HTTP 404: Artigo não encontrado.</span></div>"));
+        }
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Artigo não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");          
+    });     
+}
+
 // funções (Sketchfab: retorna modelo)
 
 let nsfEmbed = "tecnologias-sf-embed", nsfNumberEmbed = 1;
@@ -715,7 +902,7 @@ function getSketchfabModelo(valor1, localConteudo, localErro, localLoad){
             nsfNumberUrl++; 
             nsfNumberCanal++; 
         }        
-        embed = "<iframe width=\"640\" height=\"480\" src=\""+data.embedUrl+"\" allow=\"autoplay; fullscreen; vr\" allowfullscreen></iframe>";
+        embed = "<iframe allow=\"autoplay; vr\" allowfullscreen height=\"480\" src=\""+data.embedUrl+"\" width=\"640\"></iframe>";
         logo = "<img alt=\"\" src=\"assets/img/sketchfab.png\">";
         conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nsfEmbed.concat(nsfNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nsfLogo.concat(nsfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nsfTitulo.concat(nsfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.name.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nsfDescricao.concat(nsfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfUrl.concat(nsfNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.viewerUrl+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfCanal.concat(nsfNumberCanal)+" placeholder=\"Canal\" type=\"text\" value="+data.user.displayName.replace(/\s/g,"&#160;")+"></div></div></div></div>";       
         localConteudo.html(conteudo);
@@ -750,7 +937,7 @@ function getSketchfabColecao(valor1, localConteudo, localErro, localLoad){
             nsfNumberUrl++; 
             nsfNumberCanal++; 
         }        
-        embed = "<iframe width=\"640\" height=\"480\" src=\""+data.embedUrl+"\" allow=\"autoplay; fullscreen; vr\" allowfullscreen></iframe>";
+        embed = "<iframe allow=\"autoplay; vr\" allowfullscreen height=\"480\" src=\""+data.embedUrl+"\" width=\"640\"></iframe>";
         logo = "<img alt=\"\" src=\"assets/img/sketchfab.png\">";
         conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nsfEmbed.concat(nsfNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nsfLogo.concat(nsfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nsfTitulo.concat(nsfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.name.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nsfDescricao.concat(nsfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfUrl.concat(nsfNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.user.profileUrl.concat("/collections/").concat(data.slug)+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nsfCanal.concat(nsfNumberCanal)+" placeholder=\"Canal\" type=\"text\" value="+data.user.displayName.replace(/\s/g,"&#160;")+"></div></div></div></div>";       
         localConteudo.html(conteudo);
