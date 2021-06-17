@@ -69,7 +69,7 @@ $("#novo-videos-yt").click(function () {
     if ($(("#info-yt").concat(infoNumberYt)).length) { 
         infoNumberYt++;
     }    
-    let videosYt = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoYt.concat(infoNumberYt)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoYt.concat(infoNumberYt)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-yt\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoYt.concat(infoNumberYt)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.youtube.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.youtube.com/watch?v=[videoID]<br><span>&bull;</span>https://www.youtube.com/playlist?list=[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>AyN73O2MVfg</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let videosYt = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoYt.concat(infoNumberYt)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoYt.concat(infoNumberYt)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoYt.concat(infoNumberYt)+0+" onclick=\"search('#"+infoYt.concat(infoNumberYt)+0+"','yt','.video-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoYt.concat(infoNumberYt)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.youtube.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.youtube.com/watch?v=[videoID]<br><span>&bull;</span>https://www.youtube.com/playlist?list=[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>AyN73O2MVfg</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>PLHz_AreHm4dlAnJ_jJtV29RFxnPHDuk9o</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#videos .content").append(videosYt);
 });
 
@@ -81,7 +81,7 @@ $("#novo-videos-vm").click(function () {
     if ($(("#info-vm").concat(infoNumberVm)).length) { 
         infoNumberVm++;
     }
-    let videosVm = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoVm.concat(infoNumberVm)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoVm.concat(infoNumberVm)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-vm\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoVm.concat(infoNumberVm)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://vimeo.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://vimeo.com/[videoID]<br><span>&bull;</span>https://vimeo.com/showcase/[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>288344114</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>5671290</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let videosVm = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoVm.concat(infoNumberVm)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoVm.concat(infoNumberVm)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoVm.concat(infoNumberVm)+0+" onclick=\"search('#"+infoVm.concat(infoNumberVm)+0+"','vm','.video-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoVm.concat(infoNumberVm)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://vimeo.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://vimeo.com/[videoID]<br><span>&bull;</span>https://vimeo.com/showcase/[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>288344114</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>5671290</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#videos .content").append(videosVm);    
 });
 
@@ -93,8 +93,32 @@ $("#novo-videos-dm").click(function () {
     if ($(("#info-dm").concat(infoNumberDm)).length) { 
         infoNumberDm++;
     }
-    let videosDm = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoDm.concat(infoNumberDm)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoDm.concat(infoNumberDm)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-dm\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoDm.concat(infoNumberDm)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.dailymotion.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.dailymotion.com/video/[videoID]<br><span>&bull;</span>https://www.dailymotion.com/playlist/[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>x5jjmaj</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>x3qd9s</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let videosDm = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Vídeo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active video-id\" type=\"button\">Vídeo</button><button class=\"btn btn-default playlist-id\" type=\"button\">Playlist</button></div><div class=\"btn-group\"><button aria-controls="+infoDm.concat(infoNumberDm)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoDm.concat(infoNumberDm)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoDm.concat(infoNumberDm)+0+" onclick=\"search('#"+infoDm.concat(infoNumberDm)+0+"','dm','.video-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoDm.concat(infoNumberDm)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.dailymotion.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.dailymotion.com/video/[videoID]<br><span>&bull;</span>https://www.dailymotion.com/playlist/[playlistID]</p><p class=\"info-title\"><strong>Exemplo &#62; Vídeo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>x5jjmaj</p><p class=\"info-title\"><strong>Exemplo &#62; Playlist ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>x3qd9s</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#videos .content").append(videosDm);    
+});
+
+// novo: adiciona elemento (Leitura: ERIC)
+
+let infoEi = "info-ei", infoNumberEi = 1;
+
+$("#novo-leitura-ei").click(function () {
+    if ($(("#info-ei").concat(infoNumberEi)).length) { 
+        infoNumberEi++; 
+    }
+    let leituraEi = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Recurso: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoEi.concat(infoNumberEi)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoEi.concat(infoNumberEi)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoEi.concat(infoNumberEi)+0+" onclick=\"search('#"+infoEi.concat(infoNumberEi)+0+"','ei')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoEi.concat(infoNumberEi)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://eric.ed.gov/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://eric.ed.gov/?id=[resourceID]<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo > Recurso ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>EJ742086<br><span>&bull;</span>EJ979670</p><hr><p class=\"info-note\">1. Também é possível obter o ID do recurso na URL, este, por meio do ERIC number.</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraEi);
+});
+
+// novo: adiciona elemento (Leitura: Semantic Scholar)
+
+let infoSc = "info-sc", infoNumberSc = 1;
+
+$("#novo-leitura-sc").click(function () {
+    if ($(("#info-sc").concat(infoNumberSc)).length) { 
+        infoNumberSc++;
+    }
+    let leituraSc = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Recurso: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoSc.concat(infoNumberSc)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoSc.concat(infoNumberSc)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoSc.concat(infoNumberSc)+0+" onclick=\"search('#"+infoSc.concat(infoNumberSc)+0+"','sc')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoSc.concat(infoNumberSc)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.semanticscholar.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.semanticscholar.org/paper/resourceName/[resourceID]<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo > Recurso ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span><strong>S2 ID:</strong> 0796f6cd7f0403a854d67d525e9b32af3b277331</p><hr><p class=\"info-note\">1. O ID do recurso é também conhecido como S2 ID. Ainda no Semantic Scholar, outro formato é aceito, este nomeado como <strong>Corpus ID</strong>, mais conhecido como S2ORC (Semantic Scholar Open Research Corpus). Um exemplo deste, é CorpusID:37220927. Além destes, outros formatos podem ser utilizados como ID, tais como, DOI, ArXiv ID, MAG ID, ACL ID e PubMed ID. Veja exemplos:</p><ul class=\"info-note\"><li><strong>DOI:</strong> 10.1038/nrn3241</li><li><strong>ArXiv ID:</strong> arXiv:1705.10311</li><li><strong>MAG ID:</strong> MAG:112218234</li><li><strong>ACL ID:</strong> ACL:W12-3903</li><li><strong>PubMed ID:</strong> PMID:19872477</li></ul><p class=\"info-note\">Veja também os websites relacionados:</p><ul class=\"info-note\"><li><strong>Digital Object Identifier (DOI):</strong> https://www.doi.org/</li><li><strong>ArXiv:</strong> https://arxiv.org/</li><li><strong>Microsoft Academic Graph:</strong> https://academic.microsoft.com/</li><li><strong>Association for Computational Linguistics (ACL):</strong> https://www.aclweb.org/</li><li><strong>PubMed:</strong> https://pubmed.ncbi.nlm.nih.gov/</li><ul></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraSc);
 });
 
 // novo: adiciona elemento (Leitura: PLOS)
@@ -105,7 +129,7 @@ $("#novo-leitura-ps").click(function () {
     if ($(("#info-ps").concat(infoNumberPs)).length) { 
         infoNumberPs++; 
     }
-    let leituraPs = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoPs.concat(infoNumberPs)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoPs.concat(infoNumberPs)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-ps\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoPs.concat(infoNumberPs)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://plos.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://journals.plos.org/plosone/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosbiology/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/ploscompbiol/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosgenetics/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosmedicine/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosntds/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plospathogens/article?id=[articleID]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1371/journal.pone.0239612<br><span>&bull;</span>10.1371/journal.pbio.3000859<br><span>&bull;</span>10.1371/journal.pcbi.1007406<br><span>&bull;</span>10.1371/journal.pgen.1008928<br><span>&bull;</span>10.1371/journal.pmed.1003212<br><span>&bull;</span>10.1371/journal.pntd.0008428<br><span>&bull;</span>10.1371/journal.ppat.1008882</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let leituraPs = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoPs.concat(infoNumberPs)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoPs.concat(infoNumberPs)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoPs.concat(infoNumberPs)+0+" onclick=\"search('#"+infoPs.concat(infoNumberPs)+0+"','ps')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoPs.concat(infoNumberPs)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://plos.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://journals.plos.org/plosone/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosbiology/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/ploscompbiol/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosgenetics/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosmedicine/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plosntds/article?id=[articleID]<br><span>&bull;</span>https://journals.plos.org/plospathogens/article?id=[articleID]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1371/journal.pone.0239612<br><span>&bull;</span>10.1371/journal.pbio.3000859<br><span>&bull;</span>10.1371/journal.pcbi.1007406<br><span>&bull;</span>10.1371/journal.pgen.1008928<br><span>&bull;</span>10.1371/journal.pmed.1003212<br><span>&bull;</span>10.1371/journal.pntd.0008428<br><span>&bull;</span>10.1371/journal.ppat.1008882</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#leitura .content").append(leituraPs);
 });
 
@@ -117,7 +141,7 @@ $("#novo-leitura-br").click(function () {
     if ($(("#info-br").concat(infoNumberBr)).length) { 
         infoNumberBr++; 
     }
-    let leituraBr = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoBr.concat(infoNumberBr)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoBr.concat(infoNumberBr)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-br\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoBr.concat(infoNumberBr)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/content/[articleID]<sup>[1]</sup>[versionNumber]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1101/2020.10.09.333211</p><hr><p class=\"info-note\">1. Também é possível obter o ID do artigo na URL, este, por meio do DOI number. Exemplo: https://doi.org/[articleID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let leituraBr = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoBr.concat(infoNumberBr)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoBr.concat(infoNumberBr)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoBr.concat(infoNumberBr)+0+" onclick=\"search('#"+infoBr.concat(infoNumberBr)+0+"','br')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoBr.concat(infoNumberBr)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/content/[articleID]<sup>[1]</sup>[versionNumber]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1101/2020.10.09.333211</p><hr><p class=\"info-note\">1. Também é possível obter o ID do artigo na URL, este, por meio do DOI number. Exemplo: https://doi.org/[articleID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#leitura .content").append(leituraBr);
 });
 
@@ -129,7 +153,7 @@ $("#novo-tecnologias-sf").click(function () {
     if ($(("#info-sf").concat(infoNumberSf)).length) { 
         infoNumberSf++;
     }    
-    let tecnologiasSf = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Modelo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active modelo-id\" type=\"button\">Modelo</button><button class=\"btn btn-default colecao-id\" type=\"button\">Coleção</button></div><div class=\"btn-group\"><button aria-controls="+infoSf.concat(infoNumberSf)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoSf.concat(infoNumberSf)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default search-sf\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoSf.concat(infoNumberSf)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/3d-models/modelName-[modelID]<br><span>&bull;</span>https://sketchfab.com/userName/collections/collectionName<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo &#62; Modelo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>689199c40bb44602b8c44ac9a059f613</p><p><strong>Exemplo &#62; Coleção ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>84c476a3367a418ca31de3e15113d6b3</p><hr><p class=\"info-note\">1. Necessário clicar em EMBED para obter o ID da coleção, este, por meio do SRC https://sketchfab.com/playlists/embed?collection=[collectionID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    let tecnologiasSf = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Modelo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active modelo-id\" type=\"button\">Modelo</button><button class=\"btn btn-default colecao-id\" type=\"button\">Coleção</button></div><div class=\"btn-group\"><button aria-controls="+infoSf.concat(infoNumberSf)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoSf.concat(infoNumberSf)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoSf.concat(infoNumberSf)+0+" onclick=\"search('#"+infoSf.concat(infoNumberSf)+0+"','sf','.modelo-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoSf.concat(infoNumberSf)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://sketchfab.com/3d-models/modelName-[modelID]<br><span>&bull;</span>https://sketchfab.com/userName/collections/collectionName<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo &#62; Modelo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>689199c40bb44602b8c44ac9a059f613</p><p><strong>Exemplo &#62; Coleção ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>84c476a3367a418ca31de3e15113d6b3</p><hr><p class=\"info-note\">1. Necessário clicar em EMBED para obter o ID da coleção, este, por meio do SRC https://sketchfab.com/playlists/embed?collection=[collectionID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#tecnologias .content").append(tecnologiasSf);
 });
 
@@ -228,173 +252,93 @@ $(document).on("click", ".search-bg", function () {
     }    
 });
 
-// procurar (Vídeos: YouTube): vídeo e playlist
+// procurar: procura elemento
 
-$(document).on("click", ".search-yt", function () {    
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButton1 = $(this).closest(".btn-toolbar").find(".video-id");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
-    localErro.html("");
-    localInfo.collapse("hide");
-    localButtonInfo.removeClass("active");
-    if(valor1 === ""){
-        if(localButton1.hasClass("active")){
-            localErro.html(erro.concat("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada.</span></div>"));
-        } else {
-            localErro.html(erro.concat("É necessário fornecer o ID da playlist para que a pesquisa seja realizada.</span></div>"));
-        }
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");        
-        if(localButton1.hasClass("active")){
-            getYoutubeVideo(valor1, localConteudo, localErro, localLoad);
-        } else {
-            getYoutubePlaylist(valor1, localConteudo, localErro, localLoad);
-        }       
-    }
-});
-
-// procurar (Vídeos: Vimeo): vídeo e playlist
-
-$(document).on("click", ".search-vm", function () {    
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButton1 = $(this).closest(".btn-toolbar").find(".video-id");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
-    localErro.html("");
-    localInfo.collapse("hide");
-    localButtonInfo.removeClass("active");
-    if(valor1 === ""){
-        if(localButton1.hasClass("active")){
-            localErro.html(erro.concat("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada.</span></div>"));
-        } else {
-            localErro.html(erro.concat("É necessário fornecer o ID da playlist para que a pesquisa seja realizada.</span></div>"));
-        }
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");        
-        if(localButton1.hasClass("active")){
-            getVimeoVideo(valor1, localConteudo, localErro, localLoad);
-        } else {
-            getVimeoPlaylist(valor1, localConteudo, localErro, localLoad);
-        }       
-    }
-});
-
-// procurar (Vídeos: Dailymotion): vídeo e playlist
-
-$(document).on("click", ".search-dm", function () {    
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButton1 = $(this).closest(".btn-toolbar").find(".video-id");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
-    localErro.html("");
-    localInfo.collapse("hide");
-    localButtonInfo.removeClass("active");
-    if(valor1 === ""){
-        if(localButton1.hasClass("active")){
-            localErro.html(erro.concat("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada.</span></div>"));
-        } else {
-            localErro.html(erro.concat("É necessário fornecer o ID da playlist para que a pesquisa seja realizada.</span></div>"));
-        }
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");        
-        if(localButton1.hasClass("active")){
-            getDailymotionVideo(valor1, localConteudo, localErro, localLoad);
-        } else {
-            getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad);
-        }       
-    }
-});
-
-// procurar (Leitura: PLOS): artigo
-
-$(document).on("click", ".search-ps", function () {
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
-    localErro.html("");
-    localInfo.collapse("hide");
-    localButtonInfo.removeClass("active");
-    if(valor1 === ""){
-        localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");
-        getPlosArtigo(valor1);        
-    }    
-});
-
-// procurar (Leitura: bioRxiv): artigo
-
-$(document).on("click", ".search-br", function () {
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
-    localErro.html("");
-    localInfo.collapse("hide");
-    localButtonInfo.removeClass("active");
-    if(valor1 === ""){
-        localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");
-        getBiorxivArtigo(valor1, localConteudo, localErro, localLoad);        
-    }    
-});
-
-// procurar (Tecnologias: Sketchfab): modelo e coleção
-
-$(document).on("click", ".search-sf", function () {
-    valor1 = $.trim($(this).closest(".btn-toolbar").prev().find("input").val());
-    localInput1 = $(this).closest(".btn-toolbar").prev().find("input");
-    localButton1 = $(this).closest(".btn-toolbar").find(".modelo-id");
-    localButtonInfo = $(this).closest(".btn-toolbar").find(".info");
-    localConteudo = $(this).closest(".btn-toolbar").siblings(".content-elemento");
-    localErro = $(this).closest(".btn-toolbar").siblings(".erro");
-    localLoad = $(this).closest(".it");
-    localInfo = $(this).closest(".btn-toolbar").next();    
+function search(id, elemento, tipo){    
+    valor1 = $.trim($(id).closest(".btn-toolbar").prev().find("input").val());
+    localInput1 = $(id).closest(".btn-toolbar").prev().find("input");
+    localButton1 = $(id).closest(".btn-toolbar").find(tipo);
+    localButtonInfo = $(id).closest(".btn-toolbar").find(".info");
+    localConteudo = $(id).closest(".btn-toolbar").siblings(".content-elemento");
+    localErro = $(id).closest(".btn-toolbar").siblings(".erro");
+    localLoad = $(id).closest(".it");
+    localInfo = $(id).closest(".btn-toolbar").next();    
     localErro.html("");
     localInfo.collapse("hide");
     localButtonInfo.removeClass("active");    
     if(valor1 === ""){
-        if(localButton1.hasClass("active")){
-            localErro.html(erro.concat("É necessário fornecer o ID do modelo para que a pesquisa seja realizada.</span></div>"));
-        } else {
-            localErro.html(erro.concat("É necessário fornecer o ID da coleção para que a pesquisa seja realizada.</span></div>"));
-        }
-        localInput1.focus();
-    } else {
-        localLoad.addClass("loading");        
-        if(localButton1.hasClass("active")){
-            getSketchfabModelo(valor1, localConteudo, localErro, localLoad);
-        } else {
-            getSketchfabColecao(valor1, localConteudo, localErro, localLoad);
-        }       
-    }    
-});
+        switch(elemento){ 
+            case "yt":
+            case "vm":
+            case "dm":
+                if(localButton1.hasClass("active")){
+                    localErro.html(erro.concat("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada.</span></div>"));
+                } else {
+                    localErro.html(erro.concat("É necessário fornecer o ID da playlist para que a pesquisa seja realizada.</span></div>"));
+                }                        
+                break;
+            case "ei":
+            case "sc":
+                localErro.html(erro.concat("É necessário fornecer o ID do recurso para que a pesquisa seja realizada.</span></div>"));
+                break;
+            case "ps":
+            case "br":
+                localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>")); 
+                break;
+            case "sf":
+                if(localButton1.hasClass("active")){
+                    localErro.html(erro.concat("É necessário fornecer o ID do modelo para que a pesquisa seja realizada.</span></div>"));
+                } else {
+                    localErro.html(erro.concat("É necessário fornecer o ID da coleção para que a pesquisa seja realizada.</span></div>"));
+                }
+        }        
+        localInput1.focus();   
+    } else {          
+        localLoad.addClass("loading");
+        switch(elemento){
+            case "yt":
+                if(localButton1.hasClass("active")){
+                    getYoutubeVideo(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getYoutubePlaylist(valor1, localConteudo, localErro, localLoad);
+                }
+                break;
+            case "vm":
+                if(localButton1.hasClass("active")){
+                    getVimeoVideo(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getVimeoPlaylist(valor1, localConteudo, localErro, localLoad);
+                }
+                break;
+            case "dm":
+                if(localButton1.hasClass("active")){
+                    getDailymotionVideo(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad);
+                }
+                break;
+            case "ei":                                
+                getEricRecurso(valor1, localConteudo, localErro, localLoad);
+                break;
+            case "sc":                                
+                getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad);
+                break;
+            case "ps":
+                getPlosArtigo(valor1); 
+                break;
+            case "br":
+                getBiorxivArtigo(valor1, localConteudo, localErro, localLoad);
+                break;
+            case "sf":
+                if(localButton1.hasClass("active")){
+                    getSketchfabModelo(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getSketchfabColecao(valor1, localConteudo, localErro, localLoad);
+                }
+                break;
+        }                
+    }        
+}
 
 // info: exibe/oculta info do elemento
 
@@ -765,6 +709,138 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
     });     
 }
 
+// funções (ERIC: retorna recurso)
+
+let neiEmbed = "leitura-ei-embed", neiNumberEmbed = 1;
+let neiLogo = "leitura-ei-logo", neiNumberLogo = 1;
+let neiTitulo = "leitura-ei-titulo", neiNumberTitulo = 1;
+let neiDescricao = "leitura-ei-descricao", neiNumberDescricao = 1;
+let neiUrl = "leitura-ei-url", neiNumberUrl = 1;
+let neiAutor = "leitura-ei-autor", neiNumberAutor = 1;
+let neiTipoPublicacao = "leitura-ei-tipo-publicacao", neiNumberTipoPublicacao = 1;
+let neiDescritor = "leitura-ei-descritor", neiNumberDescritor = 1;
+let neiNomePeriodico = "leitura-ei-nome-periodico", neiNumberNomePeriodico = 1;
+let neiInfoPeriodico = "leitura-ei-info-periodico", neiNumberInfoPeriodico = 1;
+
+function getEricRecurso(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.ies.ed.gov/eric/?search=id:"+valor1+"&format=json&fields=title,author,description,id,publicationtype,subject,e_fulltextauth,source,sourceid", function(){})
+    .done(function(data){
+        try{  
+            let conteudoTipo;
+            if(data.response.docs[0].e_fulltextauth === 1){
+                embed = "<iframe allowfullscreen height=\"360\" src=\"https://files.eric.ed.gov/fulltext/"+data.response.docs[0].id+".pdf\" width=\"640\"></iframe>";
+                conteudoTipo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\">";
+            } else {
+                embed = "";
+                conteudoTipo = "<div class=\"box1\">";
+            }
+            if ($("[name=\"leitura-ei-embed"+neiNumberEmbed+"\"]").length) { 
+                neiNumberEmbed++;
+                neiNumberLogo++;
+                neiNumberTitulo++;
+                neiNumberDescricao++;
+                neiNumberUrl++;
+                neiNumberAutor++; 
+                neiNumberTipoPublicacao++;
+                neiNumberDescritor++;
+                neiNumberNomePeriodico++;
+                neiNumberInfoPeriodico++; 
+            }
+            logo = "<img alt=\"\" src=\"assets/img/eric.png\">";
+            conteudo = conteudoTipo+"<input name="+neiEmbed.concat(neiNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1\"><input name="+neiLogo.concat(neiNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+neiTitulo.concat(neiNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.response.docs[0].title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+neiDescricao.concat(neiNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.response.docs[0].description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiUrl.concat(neiNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://eric.ed.gov/?id="+data.response.docs[0].id+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiAutor.concat(neiNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+data.response.docs[0].author.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiTipoPublicacao.concat(neiNumberTipoPublicacao)+" placeholder=\"Tipo de publicação\" type=\"text\" value="+data.response.docs[0].publicationtype.join("; ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiDescritor.concat(neiNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+data.response.docs[0].subject.join(", ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiNomePeriodico.concat(neiNumberNomePeriodico)+" placeholder=\"Periódico | Organização\" type=\"text\" value="+data.response.docs[0].source.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+neiInfoPeriodico.concat(neiNumberInfoPeriodico)+" placeholder=\"Periódico (informação) | Organização (informação)\" type=\"text\" value="+data.response.docs[0].sourceid.replace(/\s/g,"&#160;")+"></div></div></div></div>";
+            localConteudo.html(conteudo);
+            localConteudo.css("display","block"); 
+        } catch(e){
+            localConteudo.css("display","none");
+            localErro.html(erro.concat("HTTP 404: Recurso não encontrado.</span></div>"));
+        }
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Recurso não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");       
+    });     
+}
+
+// funções (Semantic Scholar: retorna recurso)
+
+let nscEmbed = "leitura-sc-embed", nscNumberEmbed = 1;
+let nscLogo = "leitura-sc-logo", nscNumberLogo = 1;
+let nscTitulo = "leitura-sc-titulo", nscNumberTitulo = 1;
+let nscDescricao = "leitura-sc-descricao", nscNumberDescricao = 1;
+let nscUrl = "leitura-sc-url", nscNumberUrl = 1;
+let nscAutor = "leitura-sc-autor", nscNumberAutor = 1;
+let nscAreaEstudo = "leitura-sc-area-estudo", nscNumberAreaEstudo = 1;
+let nscDescritor = "leitura-sc-descritor", nscNumberDescritor = 1;
+let nscNomePeriodico = "leitura-sc-nome-periodico", nscNumberNomePeriodico = 1;
+let nscInfoPeriodico = "leitura-sc-info-periodico", nscNumberInfoPeriodico = 1;
+
+function getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.semanticscholar.org/v1/paper/"+valor1, function(){})
+    .done(function(data){        
+        let autores = [], areaEstudo = [], descritores = [], conteudoTipo; 
+        for(let i = 0; i < data.authors.length; i++){            
+            autores.push(data.authors[i].name);
+        }        
+        try{
+            for(let i = 0; i < data.fieldsOfStudy.length; i++){            
+                areaEstudo.push(data.fieldsOfStudy[i]);
+            }            
+        } catch(e){
+            areaEstudo.push("none");
+        }
+        for(let i = 0; i < data.topics.length; i++){            
+            descritores.push(data.topics[i].topic);
+        }
+        if(data.arxivId !== null){
+            embed = "<iframe allowfullscreen height=\"360\" src=\"https://arxiv.org/pdf/"+data.arxivId+"\" width=\"640\"></iframe>";
+            conteudoTipo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\">";
+        } else {
+            embed = "";
+            conteudoTipo = "<div class=\"box1\">";                      
+        }
+        if ($("[name=\"leitura-sc-embed"+nscNumberEmbed+"\"]").length) { 
+            nscNumberEmbed++; 
+            nscNumberLogo++;
+            nscNumberTitulo++;
+            nscNumberDescricao++;
+            nscNumberUrl++;
+            nscNumberAutor++;
+            nscNumberAreaEstudo++;
+            nscNumberDescritor++;
+            nscNumberNomePeriodico++;
+            nscNumberInfoPeriodico++;
+        }
+        logo = "<img alt=\"\" src=\"assets/img/semantic-scholar.png\">";
+        conteudo = conteudoTipo+"<input name="+nscEmbed.concat(nscNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1\"><input name="+nscLogo.concat(nscNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nscTitulo.concat(nscNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nscDescricao.concat(nscNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscUrl.concat(nscNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.url+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAutor.concat(nscNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAreaEstudo.concat(nscNumberAreaEstudo)+" placeholder=\"Área de Estudo\" type=\"text\" value="+areaEstudo.join(", ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscDescritor.concat(nscNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+descritores.join(", ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscNomePeriodico.concat(nscNumberNomePeriodico)+" placeholder=\"Periódico | Organização\" type=\"text\" value="+data.venue.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscInfoPeriodico.concat(nscNumberInfoPeriodico)+" placeholder=\"Periódico (informação) | Organização (informação)\" type=\"text\" value="+data.year+"></div></div></div></div>";
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Recurso não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
 // funções (PLOS: retorna artigo)
 
 let npsLogo = "leitura-ps-logo", npsNumberLogo = 1;
@@ -846,19 +922,19 @@ function getBiorxivArtigo(valor1, localConteudo, localErro, localLoad){
     $.getJSON("https://api.biorxiv.org/details/biorxiv/"+valor1, function(){})
     .done(function(data){         
         try {            
-            if ($("[name=\"leitura-br-embed"+nbrEmbed+"\"]").length) {
-                nbrEmbed++;
-                nbrLogo++;
-                nbrTitulo++; 
-                nbrDescricao++;
-                nbrUrl++;
-                nbrAutor++;
-                nbrTipoPublicacao++;
-                nbrNomeInfoPeriodico++;  
+            if ($("[name=\"leitura-br-embed"+nbrNumberEmbed+"\"]").length) {
+                nbrNumberEmbed++;
+                nbrNumberLogo++;
+                nbrNumberTitulo++; 
+                nbrNumberDescricao++;
+                nbrNumberUrl++;
+                nbrNumberAutor++;
+                nbrNumberTipoPublicacao++;
+                nbrNumberNomeInfoPeriodico++;  
             }            
             embed = "<iframe allowfullscreen height=\"360\" src=\"https://www.biorxiv.org/content/"+data.collection[0].doi+"v"+data.collection[0].version+".full.pdf\" width=\"640\"></iframe>";
             logo = "<img alt=\"\" src=\"assets/img/biorxiv.png\">";
-            conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nbrEmbed.concat(nbrNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1 box2\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nbrLogo.concat(nbrNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nbrTitulo.concat(nbrNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.collection[0].title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nbrDescricao.concat(nbrNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.collection[0].abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrUrl.concat(nbrNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.biorxiv.org/content/"+data.collection[0].doi+"v"+data.collection[0].version+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrAutor.concat(nbrNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+data.collection[0].authors.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrTipoPublicacao.concat(nbrNumberTipoPublicacao)+" placeholder=\"Tipo de publicação\" type=\"text\" value="+data.collection[0].category.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrNomeInfoPeriodico.concat(nbrNumberNomeInfoPeriodico)+" placeholder=\"Periódico e Data\" type=\"text\" value="+data.collection[0].published.replace(/\s/g,"&#160;")+",&#160;"+data.collection[0].date+"></div></div></div></div>";   
+            conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-6 col-sm-12\"><input name="+nbrEmbed.concat(nbrNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1 responsive-iframe1\">"+embed+"</div></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nbrLogo.concat(nbrNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nbrTitulo.concat(nbrNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.collection[0].title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nbrDescricao.concat(nbrNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.collection[0].abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrUrl.concat(nbrNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.biorxiv.org/content/"+data.collection[0].doi+"v"+data.collection[0].version+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrAutor.concat(nbrNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+data.collection[0].authors.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrTipoPublicacao.concat(nbrNumberTipoPublicacao)+" placeholder=\"Tipo de publicação\" type=\"text\" value="+data.collection[0].category.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nbrNomeInfoPeriodico.concat(nbrNumberNomeInfoPeriodico)+" placeholder=\"Periódico e Data\" type=\"text\" value="+data.collection[0].published.replace(/\s/g,"&#160;")+",&#160;"+data.collection[0].date+"></div></div></div></div>";   
             localConteudo.html(conteudo);
             localConteudo.css("display","block");
         } catch(e){

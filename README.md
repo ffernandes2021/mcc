@@ -40,6 +40,13 @@
    - Atualização do README.md; 
    - GET de artigos do PLOS - Public Library of Science, utilizando requisições AJAX/JSONP com jQuery para REST API (PLOS Search API).
    - GET de artigos do bioRxiv, utilizando requisições AJAX/JSON com jQuery para REST API (bioRxiv API).
+
+   **Commit 6:**
+
+   - Atualização do README.md;
+   - Otimização de código: substituição dos scripts procurar por uma única function search
+   - GET de artigos do ERIC - Education Resources Information Center, utilizando requisições AJAX/JSON com jQuery para REST API (ERIC API).
+   - GET de artigos do Semantic Scholar, utilizando requisições AJAX/JSON com jQuery para REST API (Semantic Scholar API).
    
 ## Tecnologias
 
@@ -49,7 +56,7 @@
    - **Fonte:** Font Awesome 5.15.3 e Google Fonts (Carrois Gothic)
    - **Framework:** Twitter Bootstrap 3.4.1
    - **Biblioteca JS:** jQuery 3.4.1
-   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed, Dailymotion Data API, PLOS Search API, bioRxiv API e Sketchfab Data API 3.0.
+   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed, Dailymotion Data API, ERIC API, Semantic Scholar API, PLOS Search API, bioRxiv API e Sketchfab Data API 3.0.
    - **Browser:** Google Chrome 90.0.4430.93 (64 bits) e Mozilla Firefox 88.0 (64 bits)
    
    **Back-end, Database, Infra e Outros:**
@@ -61,7 +68,7 @@
    - **Builder:** Apache Ant 1.9.7
    - **Platform:** Oracle Java EE 7 (OpenJDK 8)
    - **IDE:** Apache NetBeans IDE 8.2
-   - **OS:** Canonical Linux Ubuntu 20.10
+   - **OS:** Canonical Linux Ubuntu 21.04
    
 ## Implantação
 

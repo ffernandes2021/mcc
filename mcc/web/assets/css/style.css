@@ -202,6 +202,10 @@ textarea {
     font-size: 11px;
 }
 
+ul.info-note {
+    padding-left: 20px;
+}
+
 .info-item span {
     padding-right: 10px;
 }
@@ -245,4 +249,8 @@ iframe {
 .box2 {
     padding-left: 0;
     padding-right: 0;
+}
+
+hr {
+    border-top: solid 1px #CCC;
 }
