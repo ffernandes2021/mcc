@@ -1,4 +1,4 @@
-# mCC
+# mCC [projeto]
 
 ## Sobre
    
