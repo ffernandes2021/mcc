@@ -6,7 +6,7 @@
 
    Este é um projeto em **andamento**. Ele é semanalmente incrementado e compartilhado aqui no GitHub.
 
-   É um projeto **open source**, sob a licença [**GNU GPLv3**](https://www.gnu.org/licenses/gpl-3.0.pt-br.html?target="blank"). Assim, pode ser baixado, modificado, mas distribuído apenas sob a mesma licença.
+   É um projeto **open source**, sob a licença [**GNU GPLv3**](https://www.gnu.org/licenses/gpl-3.0.pt-br.html). Assim, pode ser baixado, modificado, mas distribuído apenas sob a mesma licença.
    
    É um projeto que envolve inúmeras tecnologias, tais como tecnologias front-end, back-end, base de dados NoSQL e chamadas REST API's. Assim sendo, comentarei todos os commits aqui mesmo com vocês para um melhor entendimento do projeto, bem como sua evolução.
 
@@ -79,9 +79,9 @@
    
 ## Implantação
 
-   1. Instale o [OpenJDK 8+](https://openjdk.java.net/){:target="_blank"} (ou [JDK 8+](https://www.oracle.com/java/){:target="_blank"}, se preferir) e defina as variáveis de ambiente do Java;
-   2. Instale o [NetBeans IDE 8.2](https://netbeans.apache.org/){:target="_blank"}. Inclua na instalação da IDE o servidor [Apache Tomcat](http://tomcat.apache.org/){:target="_blank"} e defina as variáveis de ambiente do Tomcat;
-   3. Instale o [MongoDB 4.4.3.](https://www.mongodb.com/){:target="_blank"}. A instalação inclui o Server e o Shell. Lembre sempre de startar o database antes de executar a aplicação;
+   1. Instale o [OpenJDK 8+](https://openjdk.java.net/) (ou [JDK 8+](https://www.oracle.com/java/), se preferir) e defina as variáveis de ambiente do Java;
+   2. Instale o [NetBeans IDE 8.2](https://netbeans.apache.org/). Inclua na instalação da IDE o servidor [Apache Tomcat](http://tomcat.apache.org/) e defina as variáveis de ambiente do Tomcat;
+   3. Instale o [MongoDB 4.4.3.](https://www.mongodb.com/). A instalação inclui o Server e o Shell. Lembre sempre de startar o database antes de executar a aplicação;
    4. Instale um browser de sua preferência;
    5. Baixe o zip do GitHub, descompacte e abra o projeto no NetBeans IDE.
    6. No NetBeans para construir (builder), clique sobre o projeto, em seguida pressione F11. Para limpar e construir, pressione Shift + F11. Para executar (run), pressione F6. Para executar com depuração (debugger), pressione Ctrl + F5.
@@ -91,5 +91,5 @@
 
    Ao fazer o download deste projeto, por favor, obtenha suas próprias API Keys nos links abaixo e substitua pelos valores correspondentes no arquivo **script.js**. 
    
-   - Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger){:target="_blank"}
-   - YouTube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3){:target="_blank"}
+   - Blogger ==> [Blogger API 3.0](https://developers.google.com/blogger)
+   - YouTube ==> [YouTube Data API 3.0](https://developers.google.com/youtube/v3)
