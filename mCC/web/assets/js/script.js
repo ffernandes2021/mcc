@@ -121,6 +121,18 @@ $("#novo-leitura-sc").click(function () {
     $("#leitura .content").append(leituraSc);
 });
 
+// novo: adiciona elemento (Leitura: DOAJ)
+
+let infoDj = "info-dj", infoNumberDj = 1;
+
+$("#novo-leitura-dj").click(function () { 
+    if ($(("#info-dj").concat(infoNumberDj)).length) { 
+        infoNumberDj++;
+    }    
+    let leituraDj = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active artigo-id\" type=\"button\">Artigo</button><button class=\"btn btn-default periodico-id\" type=\"button\">Periódico</button></div><div class=\"btn-group\"><button aria-controls="+infoDj.concat(infoNumberDj)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoDj.concat(infoNumberDj)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoDj.concat(infoNumberDj)+0+" onclick=\"search('#"+infoDj.concat(infoNumberDj)+0+"','dj','.artigo-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoDj.concat(infoNumberDj)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://doaj.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://doaj.org/article/[articleID]<br><span>&bull;</span>https://doaj.org/toc/ISSN?rss<sup>[1]</sup></p><p class=\"info-title\"><strong>Exemplo > Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>0007d9a6157049488b3215a03eec160d</p><p class=\"info-title\"><strong>Exemplo > Periódico ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>91e7cecae9a74bc0888a7b4209aef7ba</p><hr><p class=\"info-note\">1. Para obter o ID do períodico, deves acessar a URL https://doaj.org/feed, e nesta, por meio da URL, localizar o atributo UUID, representado pelo elemento &#60;id&#62;urn:uuid:[journalID]&#60;/id&#62;.</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraDj);
+});
+
 // novo: adiciona elemento (Leitura: PLOS)
 
 let infoPs = "info-ps", infoNumberPs = 1;
@@ -143,6 +155,18 @@ $("#novo-leitura-br").click(function () {
     }
     let leituraBr = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Artigo: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoBr.concat(infoNumberBr)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoBr.concat(infoNumberBr)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoBr.concat(infoNumberBr)+0+" onclick=\"search('#"+infoBr.concat(infoNumberBr)+0+"','br')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoBr.concat(infoNumberBr)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.biorxiv.org/content/[articleID]<sup>[1]</sup>[versionNumber]</p><p class=\"info-title\"><strong>Exemplo &#62; Artigo ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>10.1101/2020.10.09.333211</p><hr><p class=\"info-note\">1. Também é possível obter o ID do artigo na URL, este, por meio do DOI number. Exemplo: https://doi.org/[articleID].</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#leitura .content").append(leituraBr);
+});
+
+// novo: adiciona elemento (Leitura: GBIF)
+
+let infoGf = "info-gf", infoNumberGf = 1;
+
+$("#novo-leitura-gf").click(function () {
+    if ($(("#info-gf").concat(infoNumberGf)).length) { 
+        infoNumberGf++;
+    }    
+    let leituraGf = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Dado: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active dado-id\" type=\"button\">Dado</button><button class=\"btn btn-default ocorrencia-id\" type=\"button\">Ocorrência</button><button class=\"btn btn-default especie-id\" type=\"button\">Espécie</button></div><div class=\"btn-group\"><button aria-controls="+infoGf.concat(infoNumberGf)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoGf.concat(infoNumberGf)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoGf.concat(infoNumberGf)+0+" onclick=\"search('#"+infoGf.concat(infoNumberGf)+0+"','gf','.dado-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoGf.concat(infoNumberGf)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.gbif.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.gbif.org/dataset/[datasetID]<br><span>&bull;</span>https://www.gbif.org/occurrence/[occurrenceID]<br><span>&bull;</span>https://www.gbif.org/species/[speciesID]</p><p class=\"info-title\"><strong>Exemplo > Dado ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>4fa7b334-ce0d-4e88-aaae-2e0c138d049e</p><p class=\"info-title\"><strong>Exemplo > Ocorrência ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>1095554046</p><p class=\"info-title\"><strong>Exemplo > Espécie ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>5219426</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraGf);
 });
 
 // novo: adiciona elemento (Tecnologias: Sketchfab)
@@ -190,6 +214,51 @@ $(document).on("click", ".playlist-id", function () {
     $(this).addClass("active");
     $(this).siblings().removeClass("active");      
     $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Playlist: ID");
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Leitura: DOAJ): artigo ID
+
+$(document).on("click", ".artigo-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");    
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Artigo: ID");    
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Leitura: DOAJ): periódico ID
+
+$(document).on("click", ".periodico-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");    
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Periódico: ID");    
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Leitura: GBIF): dado ID
+
+$(document).on("click", ".dado-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Dado: ID");    
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Leitura: GBIF): ocorrência ID
+
+$(document).on("click", ".ocorrencia-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");    
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Ocorrência: ID");    
+    $(this).closest(".btn-toolbar").prev().find("input").focus();
+});
+
+// selecionar (Leitura: GBIF): espécie ID
+
+$(document).on("click", ".especie-id", function () {
+    $(this).addClass("active");    
+    $(this).siblings().removeClass("active");    
+    $(this).closest(".btn-toolbar").prev().find("input").attr("placeholder","Espécie: ID");    
     $(this).closest(".btn-toolbar").prev().find("input").focus();
 });
 
@@ -281,9 +350,25 @@ function search(id, elemento, tipo){
             case "sc":
                 localErro.html(erro.concat("É necessário fornecer o ID do recurso para que a pesquisa seja realizada.</span></div>"));
                 break;
+            case "dj":
+                if(localButton1.hasClass("active")){
+                    localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
+                } else {
+                    localErro.html(erro.concat("É necessário fornecer o ID do periódico para que a pesquisa seja realizada.</span></div>"));
+                }                        
+                break;
             case "ps":
             case "br":
                 localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>")); 
+                break;
+            case "gf":
+                if(localButton1.hasClass("active")){
+                    localErro.html(erro.concat("É necessário fornecer o ID do dado para que a pesquisa seja realizada.</span></div>"));
+                } else if(localButton1.next().hasClass("active")) {
+                    localErro.html(erro.concat("É necessário fornecer o ID da ocorrência para que a pesquisa seja realizada.</span></div>"));
+                } else {
+                    localErro.html(erro.concat("É necessário fornecer o ID da espécie para que a pesquisa seja realizada.</span></div>"));
+                }
                 break;
             case "sf":
                 if(localButton1.hasClass("active")){
@@ -323,11 +408,27 @@ function search(id, elemento, tipo){
             case "sc":                                
                 getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad);
                 break;
+            case "dj":
+                if(localButton1.hasClass("active")){
+                    getDoajArtigo(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getDoajPeriodico(valor1, localConteudo, localErro, localLoad);
+                }
+                break;
             case "ps":
                 getPlosArtigo(valor1); 
                 break;
             case "br":
                 getBiorxivArtigo(valor1, localConteudo, localErro, localLoad);
+                break;            
+            case "gf":
+                if(localButton1.hasClass("active")){
+                    getGbifDado(valor1, localConteudo, localErro, localLoad);
+                } else if(localButton1.next().hasClass("active")) {
+                    getGbifOcorrencia(valor1, localConteudo, localErro, localLoad);
+                } else {
+                    getGbifEspecie(valor1, localConteudo, localErro, localLoad);
+                }
                 break;
             case "sf":
                 if(localButton1.hasClass("active")){
@@ -787,16 +888,16 @@ let nscInfoPeriodico = "leitura-sc-info-periodico", nscNumberInfoPeriodico = 1;
 function getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad){
     $.getJSON("https://api.semanticscholar.org/v1/paper/"+valor1, function(){})
     .done(function(data){        
-        let autores = [], areaEstudo = [], descritores = [], conteudoTipo; 
+        let autores = [], areasEstudo = [], descritores = [], conteudoTipo; 
         for(let i = 0; i < data.authors.length; i++){            
             autores.push(data.authors[i].name);
         }        
         try{
             for(let i = 0; i < data.fieldsOfStudy.length; i++){            
-                areaEstudo.push(data.fieldsOfStudy[i]);
+                areasEstudo.push(data.fieldsOfStudy[i]);
             }            
         } catch(e){
-            areaEstudo.push("none");
+            areasEstudo.push("none");
         }
         for(let i = 0; i < data.topics.length; i++){            
             descritores.push(data.topics[i].topic);
@@ -821,7 +922,7 @@ function getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad){
             nscNumberInfoPeriodico++;
         }
         logo = "<img alt=\"\" src=\"assets/img/semantic-scholar.png\">";
-        conteudo = conteudoTipo+"<input name="+nscEmbed.concat(nscNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1\"><input name="+nscLogo.concat(nscNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nscTitulo.concat(nscNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nscDescricao.concat(nscNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscUrl.concat(nscNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.url+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAutor.concat(nscNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAreaEstudo.concat(nscNumberAreaEstudo)+" placeholder=\"Área de Estudo\" type=\"text\" value="+areaEstudo.join(", ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscDescritor.concat(nscNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+descritores.join(", ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscNomePeriodico.concat(nscNumberNomePeriodico)+" placeholder=\"Periódico | Organização\" type=\"text\" value="+data.venue.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscInfoPeriodico.concat(nscNumberInfoPeriodico)+" placeholder=\"Periódico (informação) | Organização (informação)\" type=\"text\" value="+data.year+"></div></div></div></div>";
+        conteudo = conteudoTipo+"<input name="+nscEmbed.concat(nscNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"><div class=\"box1\"><input name="+nscLogo.concat(nscNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nscTitulo.concat(nscNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nscDescricao.concat(nscNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.abstract+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscUrl.concat(nscNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.url+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAutor.concat(nscNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscAreaEstudo.concat(nscNumberAreaEstudo)+" placeholder=\"Área de Estudo\" type=\"text\" value="+areasEstudo.join(", ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscDescritor.concat(nscNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+descritores.join(", ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscNomePeriodico.concat(nscNumberNomePeriodico)+" placeholder=\"Periódico | Organização\" type=\"text\" value="+data.venue.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nscInfoPeriodico.concat(nscNumberInfoPeriodico)+" placeholder=\"Periódico (informação) | Organização (informação)\" type=\"text\" value="+data.year+"></div></div></div></div>";
         localConteudo.html(conteudo);
         localConteudo.css("display","block");
     })
@@ -830,6 +931,105 @@ function getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad){
         switch (jqXHR.status) {   
             case 404:
                 localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Recurso não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
+// funções (DOAJ: retorna artigo)
+
+let ndjLogo = "leitura-dj-logo", ndjNumberLogo = 1;
+let ndjTitulo = "leitura-dj-titulo", ndjNumberTitulo = 1;
+let ndjDescricao = "leitura-dj-descricao", ndjNumberDescricao = 1;
+let ndjUrl = "leitura-dj-url", ndjNumberUrl = 1;
+let ndjAutor = "leitura-dj-autor", ndjNumberAutor = 1;
+let ndjPalavraChave = "leitura-dj-palavra-chave", ndjNumberPalavraChave = 1;
+let ndjDescritor = "leitura-dj-descritor", ndjNumberDescritor = 1;
+let ndjNomePeriodico = "leitura-dj-nome-periodico", ndjNumberNomePeriodico = 1;
+let ndjInfoPeriodico = "leitura-dj-info-periodico", ndjNumberInfoPeriodico = 1;
+
+function getDoajArtigo(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://doaj.org/api/v2/articles/"+valor1, function(){})    
+    .done(function(data){    
+        let autores = [], palavrasChave = [], descritores = [];
+        for(let i = 0; i < data.bibjson.author.length; i++){            
+            autores.push(data.bibjson.author[i].name);
+        }            
+        for(let i = 0; i < data.bibjson.keywords.length; i++){            
+            palavrasChave.push(data.bibjson.keywords[i]);
+        }
+        for(let i = 0; i < data.bibjson.subject.length; i++){            
+            descritores.push(data.bibjson.subject[i].term);
+        }   
+        if ($("[name=\"leitura-dj-logo"+ndjNumberLogo+"\"]").length) { 
+            ndjNumberLogo++; 
+            ndjNumberTitulo++;
+            ndjNumberDescricao++;
+            ndjNumberUrl++;
+            ndjNumberAutor++;
+            ndjNumberPalavraChave++;
+            ndjNumberDescritor++;
+            ndjNumberNomePeriodico++;
+            ndjNumberInfoPeriodico++;
+        }  
+        logo = "<img alt=\"\" src=\"assets/img/doaj.png\">";
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+ndjLogo.concat(ndjNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ndjTitulo.concat(ndjNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.bibjson.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ndjDescricao.concat(ndjNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.bibjson.abstract.replace("<p>","").replace("</p>","")+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjUrl.concat(ndjNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://doaj.org/article/"+valor1+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjAutor.concat(ndjNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjPalavraChave.concat(ndjNumberPalavraChave)+" placeholder=\"Palavras-chave\" type=\"text\" value="+palavrasChave.join(", ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjDescritor.concat(ndjNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+descritores.join(", ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjNomePeriodico.concat(ndjNumberNomePeriodico)+" placeholder=\"Periódico | Organização\" type=\"text\" value="+data.bibjson.journal.publisher.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjInfoPeriodico.concat(ndjNumberInfoPeriodico)+" placeholder=\"Periódico (informação) | Organização (informação)\" type=\"text\" value=\"v"+data.bibjson.journal.volume.concat("&#160;n").concat(data.bibjson.journal.number).concat("&#160;p").concat(data.bibjson.journal.start_page).concat("-").concat(data.bibjson.journal.end_page).concat("&#160;").concat(data.bibjson.month).concat("/").concat(data.bibjson.year)+"\"></div></div></div></div>";           
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Artigo não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
+// funções (DOAJ: retorna periódico)
+
+function getDoajPeriodico(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://doaj.org/api/v2/journals/"+valor1, function(){})    
+    .done(function(data){  
+        let palavrasChave = [], descritores = [];
+        for(let i = 0; i < data.bibjson.keywords.length; i++){            
+            palavrasChave.push(data.bibjson.keywords[i]);
+        }
+        for(let i = 0; i < data.bibjson.subject.length; i++){            
+            descritores.push(data.bibjson.subject[i].term);
+        }        
+        if ($("[name=\"leitura-dj-logo"+ndjNumberLogo+"\"]").length) { 
+            ndjNumberLogo++; 
+            ndjNumberTitulo++;
+            ndjNumberDescricao++;
+            ndjNumberUrl++;
+            ndjNumberAutor++;
+            ndjNumberPalavraChave++;
+            ndjNumberDescritor++; 
+        }        
+        logo = "<img alt=\"\" src=\"assets/img/doaj.png\">";
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+ndjLogo.concat(ndjNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ndjTitulo.concat(ndjNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.bibjson.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ndjDescricao.concat(ndjNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\"></textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjUrl.concat(ndjNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://doaj.org/toc/"+data.bibjson.eissn+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjAutor.concat(ndjNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+data.bibjson.publisher.name.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjPalavraChave.concat(ndjNumberPalavraChave)+" placeholder=\"Palavras-chave\" type=\"text\" value="+palavrasChave.join(", ").replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ndjDescritor.concat(ndjNumberDescritor)+" placeholder=\"Descritores\" type=\"text\" value="+descritores.join(", ").replace(/\s/g,"&#160;")+"></div></div></div></div>";           
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Periódico não encontrado.</span></div>"));
                 break;
             default:                    
                 localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
@@ -887,7 +1087,7 @@ function callbackPlos(data){
                 url = "https://journals.plos.org/plospathogens/article?id="+data.response.docs[0].id;
                 break;
         }        
-        if ($("[name=\"leitura-ps-titulo"+npsNumberLogo+"\"]").length) { 
+        if ($("[name=\"leitura-ps-logo"+npsNumberLogo+"\"]").length) { 
             npsNumberLogo++; 
             npsNumberTitulo++; 
             npsNumberDescricao++; 
@@ -956,6 +1156,180 @@ function getBiorxivArtigo(valor1, localConteudo, localErro, localLoad){
     .always(function() {
         localLoad.removeClass("loading");          
     });     
+}
+
+// funções (GBIF: retorna dado)
+
+let ngfLogo = "leitura-gf-logo", ngfNumberLogo = 1;
+let ngfTitulo = "leitura-gf-titulo", ngfNumberTitulo = 1;
+let ngfDescricao = "leitura-gf-descricao", ngfNumberDescricao = 1;
+let ngfUrl = "leitura-gf-url", ngfNumberUrl = 1;
+let ngfTipo = "leitura-gf-tipo", ngfNumberTipo = 1;
+let ngfAutor = "leitura-gf-autor", ngfNumberAutor = 1;
+let ngfData = "leitura-gf-data", ngfNumberData = 1;
+let ngfLocalidade = "leitura-gf-localidade", ngfNumberLocalidade = 1;
+let ngfBasionimo = "leitura-gf-basionimo", ngfNumberBasionimo = 1;
+let ngfInfoPublicacao = "leitura-gf-info-publicacao", ngfNumberInfoPublicacao = 1;
+let ngfReino = "leitura-gf-reino", ngfNumberReino = 1;
+let ngfFilo = "leitura-gf-filo", ngfNumberFilo = 1;
+let ngfClasse = "leitura-gf-classe", ngfNumberClasse = 1;
+let ngfOrdem = "leitura-gf-ordem", ngfNumberOrdem = 1;
+let ngfFamilia = "leitura-gf-familia", ngfNumberFamilia = 1;
+let ngfGenero = "leitura-gf-genero", ngfNumberGenero = 1;
+let ngfEspecie = "leitura-gf-especie", ngfNumberEspecie = 1;
+
+function getGbifDado(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.gbif.org/v1/dataset/"+valor1, function(){})
+    .done(function(data){
+        if ($("[name=\"leitura-gf-logo"+ngfNumberLogo+"\"]").length) { 
+            ngfNumberLogo++; 
+            ngfNumberTitulo++;
+            ngfNumberDescricao++;
+            ngfNumberUrl++;
+            ngfNumberTipo++; 
+        }
+        logo = "<img alt=\"\" src=\"assets/img/gbif.png\">";
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+ngfLogo.concat(ngfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ngfTitulo.concat(ngfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ngfDescricao.concat(ngfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfUrl.concat(ngfNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.gbif.org/dataset/"+valor1+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfTipo.concat(ngfNumberTipo)+" placeholder=\"Tipo de dado\" type=\"text\" value="+data.type.replace(/\s/g,"&#160;")+"></div></div></div></div>"; 
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block"); 
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {
+            case 400:
+                localErro.html(erro.concat("HTTP 404: Dado não encontrado.</span></div>"));
+                break;
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Dado não encontrado.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");          
+    });     
+}
+
+// funções (GBIF: retorna ocorrência)
+
+function getGbifOcorrencia(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.gbif.org/v1/occurrence/"+valor1, function(){})
+    .done(function(data){
+        let mes;
+        switch(data.month){
+            case 1:
+                mes = "janeiro";
+                break;
+            case 2:
+                mes = "fevereiro";
+                break;
+            case 3:
+                mes = "março";
+                break;
+            case 4:
+                mes = "abril";
+                break;
+            case 5:
+                mes = "maio";
+                break;
+            case 6:
+                mes = "junho";
+                break;
+            case 7:
+                mes = "julho";
+                break;
+            case 8:
+                mes = "agosto";
+                break;
+            case 9:
+                mes = "setembro";
+                break;
+            case 10:
+                mes = "outubro";
+                break;
+            case 11:
+                mes = "novembro";
+                break;
+            case 12:
+                mes = "dezembro";
+                break;            
+        }
+        if ($("[name=\"leitura-gf-logo"+ngfNumberLogo+"\"]").length) { 
+            ngfNumberLogo++; 
+            ngfNumberTitulo++;
+            ngfNumberDescricao++;
+            ngfNumberUrl++;
+            ngfNumberAutor++;
+            ngfNumberData++;
+            ngfNumberLocalidade;  
+        }
+        logo = "<img alt=\"\" src=\"assets/img/gbif.png\">";
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+ngfLogo.concat(ngfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ngfTitulo.concat(ngfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.scientificName.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ngfDescricao.concat(ngfNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.kingdom+" &#62; "+data.phylum+" &#62; "+data.class+" &#62; "+data.order+" &#62; "+data.family+" &#62; "+data.genus+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfUrl.concat(ngfNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"https://www.gbif.org/occurrence/"+valor1+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfAutor.concat(ngfNumberAutor)+" placeholder=\"Autor\" type=\"text\" value="+data.identifiedBy.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfData.concat(ngfNumberData)+" placeholder=\"https://\" type=\"text\" value="+data.day+"&#160;de&#160;"+mes+"&#160;de&#160;"+data.year+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfLocalidade.concat(ngfNumberLocalidade)+" placeholder=\"Localidade\" type=\"text\" value="+data.country.replace(/\s/g,"&#160;")+"></div></div></div></div>";           
+        localConteudo.html(conteudo);  
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {
+            case 400:
+                localErro.html(erro.concat("HTTP 404: Ocorrência não encontrada.</span></div>"));
+                break;
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Ocorrência não encontrada.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");          
+    });     
+}
+
+// funções (GBIF: retorna espécie)
+
+function getGbifEspecie(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://api.gbif.org/v1/species/"+valor1, function(){})
+    .done(function(data){
+        if ($("[name=\"leitura-gf-logo"+ngfNumberLogo+"\"]").length) { 
+            ngfNumberLogo++; 
+            ngfNumberTitulo++;
+            ngfNumberBasionimo++;
+            ngfNumberInfoPublicacao++;
+            ngfNumberReino++;
+            ngfNumberFilo++;
+            ngfNumberClasse++;
+            ngfNumberOrdem++;
+            ngfNumberFamilia++;
+            ngfNumberGenero++;
+            ngfNumberEspecie++;
+            ngfNumberUrl++; 
+        }
+        logo = "<img alt=\"\" src=\"assets/img/gbif.png\">"; 
+        conteudo = "<div class=\"box1\"><div class=\"box1\"><input name="+ngfLogo.concat(ngfNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ngfTitulo.concat(ngfNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.scientificName.replace(/\s/g,"&#160;")+"></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfBasionimo.concat(ngfNumberBasionimo)+" placeholder=\"Basiônimo\" type=\"text\" value="+data.basionym.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfInfoPublicacao.concat(ngfNumberInfoPublicacao)+" placeholder=\"Publicação\" type=\"text\" value="+data.publishedIn.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfReino.concat(ngfNumberReino)+" placeholder=\"https://\" type=\"text\" value="+data.kingdom.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfFilo.concat(ngfNumberFilo)+" placeholder=\"Filo\" type=\"text\" value="+data.phylum.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfClasse.concat(ngfNumberClasse)+" placeholder=\"Classe\" type=\"text\" value="+data.class.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfOrdem.concat(ngfNumberOrdem)+" placeholder=\"Ordem\" type=\"text\" value="+data.order.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfFamilia.concat(ngfNumberFamilia)+" placeholder=\"Família\" type=\"text\" value="+data.family.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfGenero.concat(ngfNumberGenero)+" placeholder=\"Gênero\" type=\"text\" value="+data.genus.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfEspecie.concat(ngfNumberEspecie)+" placeholder=\"https://\" type=\"text\" value="+data.species.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngfUrl.concat(ngfNumberUrl)+" placeholder=\"http://\" type=\"text\" value=\"https://www.gbif.org/species/"+valor1+"\"></div></div></div></div>";           
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {
+            case 400:
+                localErro.html(erro.concat("HTTP 404: Espécie não encontrada.</span></div>"));
+                break;
+            case 404:
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Espécie não encontrada.</span></div>"));
+                break;
+            default:                    
+                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");          
+    }); 
 }
 
 // funções (Sketchfab: retorna modelo)
