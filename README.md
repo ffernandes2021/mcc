@@ -6,7 +6,7 @@
 
    Este é um projeto em **andamento**. Ele é semanalmente incrementado e compartilhado aqui no GitHub.
 
-   É um projeto **open source**, sob a licença [**GNU GPLv3**](https://www.gnu.org/licenses/gpl-3.0.pt-br.html){:target="_blank"}. Assim, pode ser baixado, modificado, mas distribuído apenas sob a mesma licença.
+   É um projeto **open source**, sob a licença [**GNU GPLv3**](https://www.gnu.org/licenses/gpl-3.0.pt-br.html){:target="_blank" rel="noopener"}. Assim, pode ser baixado, modificado, mas distribuído apenas sob a mesma licença.
    
    É um projeto que envolve inúmeras tecnologias, tais como tecnologias front-end, back-end, base de dados NoSQL e chamadas REST API's. Assim sendo, comentarei todos os commits aqui mesmo com vocês para um melhor entendimento do projeto, bem como sua evolução.
 
