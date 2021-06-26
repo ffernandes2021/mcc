@@ -77,7 +77,7 @@
    - **IDE:** Apache NetBeans IDE 8.2
    - **OS:** Canonical Linux Ubuntu 21.04
    
-## Implantação
+## Instalação
 
    1. Instale o [OpenJDK 8+](https://openjdk.java.net/) (ou [JDK 8+](https://www.oracle.com/java/), se preferir) e defina as variáveis de ambiente do Java;
    2. Instale o [NetBeans IDE 8.2](https://netbeans.apache.org/). Inclua na instalação da IDE o servidor [Apache Tomcat](http://tomcat.apache.org/) e defina as variáveis de ambiente do Tomcat;
