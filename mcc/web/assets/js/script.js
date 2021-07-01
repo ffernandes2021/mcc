@@ -4,8 +4,13 @@ const apiKeyBg = "AIzaSyA_o09CgY0vrI1KvIxg0de8IRtNq3CS0Yg";
 const apiKeyYt = "AIzaSyBMLlrpMVcBIz4KDcVx45x2SZW3zKL9opA";
 
 // mensagem de erro
-
-const erro = "<div class=\"alert alert-danger alert-dismissible\"><i class=\"fas fa-exclamation-circle\"></i><button class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&times;</span></button><span>";
+const returnError = (errorMessage) => `<div class=\"alert alert-danger alert-dismissible\">
+                                            <i class=\"fas fa-exclamation-circle\"></i>
+                                            <button class=\"close\" data-dismiss=\"alert\" type=\"button\">
+                                                <span aria-hidden=\"true\">&times;</span>
+                                            </button>
+                                            <span>${errorMessage}</span>
+                                        </div> `;
 
 // subcomponente
 
@@ -297,8 +302,8 @@ $(document).on("click", ".search-bg", function () {
     localInfo.collapse("hide");
     localButtonInfo.removeClass("active");
     if(localButton1.hasClass("active")){
-        if(valor1 === ""){
-            localErro.html(erro.concat("É necessário fornecer a URL do blog para que a pesquisa seja realizada.</span></div>"));            
+        if (valor1 === "") {
+            localErro.html(returnError("É necessário fornecer a URL do blog para que a pesquisa seja realizada."));         
             localInput1.focus();
         } else {            
             localLoad.addClass("loading");
@@ -306,13 +311,13 @@ $(document).on("click", ".search-bg", function () {
         }        
     } else {
         if(valor1 === "" && valor2 === ""){
-            localErro.html(erro.concat("É necessário fornecer a URL do blog e o Path do post para que a pesquisa seja realizada.</span></div>"));
+            localErro.html(returnError("É necessário fornecer a URL do blog e o Path do post para que a pesquisa seja realizada."));
             localInput1.focus();
         } else if(valor1 === ""){
-            localErro.html(erro.concat("É necessário fornecer a URL do blog para que a pesquisa seja realizada.</span></div>"));
+            localErro.html(returnError("É necessário fornecer a URL do blog para que a pesquisa seja realizada."));
             localInput1.focus();
         } else if(valor2 === ""){
-            localErro.html(erro.concat("É necessário fornecer o Path do post para que a pesquisa seja realizada.</span></div>"));
+            localErro.html(returnError("É necessário fornecer o Path do post para que a pesquisa seja realizada."));
             localInput2.focus();            
         } else {
             localLoad.addClass("loading");
@@ -341,40 +346,40 @@ function search(id, elemento, tipo){
             case "vm":
             case "dm":
                 if(localButton1.hasClass("active")){
-                    localErro.html(erro.concat("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID do vídeo para que a pesquisa seja realizada."));
                 } else {
-                    localErro.html(erro.concat("É necessário fornecer o ID da playlist para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID da playlist para que a pesquisa seja realizada."));
                 }                        
                 break;
             case "ei":
             case "sc":
-                localErro.html(erro.concat("É necessário fornecer o ID do recurso para que a pesquisa seja realizada.</span></div>"));
+                localErro.html(returnError("É necessário fornecer o ID do recurso para que a pesquisa seja realizada."));
                 break;
             case "dj":
                 if(localButton1.hasClass("active")){
-                    localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID do artigo para que a pesquisa seja realizada."));
                 } else {
-                    localErro.html(erro.concat("É necessário fornecer o ID do periódico para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID do periódico para que a pesquisa seja realizada."));
                 }                        
                 break;
             case "ps":
             case "br":
-                localErro.html(erro.concat("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.</span></div>")); 
+                localErro.html(returnError("É necessário fornecer o ID do artigo para que a pesquisa seja realizada.")); 
                 break;
             case "gf":
                 if(localButton1.hasClass("active")){
-                    localErro.html(erro.concat("É necessário fornecer o ID do dado para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID do dado para que a pesquisa seja realizada."));
                 } else if(localButton1.next().hasClass("active")) {
-                    localErro.html(erro.concat("É necessário fornecer o ID da ocorrência para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID da ocorrência para que a pesquisa seja realizada."));
                 } else {
-                    localErro.html(erro.concat("É necessário fornecer o ID da espécie para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID da espécie para que a pesquisa seja realizada."));
                 }
                 break;
             case "sf":
                 if(localButton1.hasClass("active")){
-                    localErro.html(erro.concat("É necessário fornecer o ID do modelo para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID do modelo para que a pesquisa seja realizada."));
                 } else {
-                    localErro.html(erro.concat("É necessário fornecer o ID da coleção para que a pesquisa seja realizada.</span></div>"));
+                    localErro.html(returnError("É necessário fornecer o ID da coleção para que a pesquisa seja realizada."));
                 }
         }        
         localInput1.focus();   
@@ -495,11 +500,11 @@ function getBloggerBlog(valor1, localConteudo, localErro, localLoad){
     .fail(function(jqXHR){
         localConteudo.css("display","none");
         switch (jqXHR.status) {            
-            case 404:                
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Blog não encontrado.</span></div>"));
+            case 404:
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Blog não encontrado.`));
                 break;
-            default:                
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+            default:
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -530,11 +535,11 @@ function getBloggerPost(valor1, valor2, localConteudo, localErro, localLoad){
         .fail(function(jqXHR){
             localConteudo.css("display","none");
             switch (jqXHR.status) {
-                case 404:                    
-                    localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Post não encontrado.</span></div>"));
+                case 404:
+                    localErro.html(returnError(`HTTP ${jqXHR.status}: Post não encontrado.`));
                     break;
                 default:                    
-                    localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                    localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                     break;
             }
         })
@@ -546,10 +551,10 @@ function getBloggerPost(valor1, valor2, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 404:                
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Blog não encontrado.</span></div>"));                
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Blog não encontrado.`));                
                 break;
             default:                
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));                
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));                
                 break;
         }
         localLoad.removeClass("loading");
@@ -583,20 +588,20 @@ function getYoutubeVideo(valor1, localConteudo, localErro, localLoad){
             localConteudo.css("display","block");
         } else {
             localConteudo.css("display","none");
-            localErro.html(erro.concat("HTTP 404: Vídeo não encontrado.</span></div>"));
+            localErro.html(returnError("HTTP 404: Vídeo não encontrado."));
         }
     })
     .fail(function(jqXHR){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não pode ser incorporado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não pode ser incorporado.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -625,20 +630,20 @@ function getYoutubePlaylist(valor1, localConteudo, localErro, localLoad){
             localConteudo.css("display","block");
         } else {
             localConteudo.css("display","none");
-            localErro.html(erro.concat("HTTP 404: Playlist não encontrada.</span></div>"));                
+            localErro.html(returnError("HTTP 404: Playlist não encontrada."));                
         }
     })
     .fail(function(jqXHR){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não pode ser incorporada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não pode ser incorporada.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -676,13 +681,13 @@ function getVimeoVideo(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não pode ser incorporado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não pode ser incorporado.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -713,13 +718,13 @@ function getVimeoPlaylist(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não pode ser incorporada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}:  Playlist não pode ser incorporada.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -757,13 +762,13 @@ function getDailymotionVideo(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não pode ser incorporado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não pode ser incorporado.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Vídeo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Vídeo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -795,13 +800,13 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {                
             case 403:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não pode ser incorporada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não pode ser incorporada.`));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Playlist não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -853,17 +858,17 @@ function getEricRecurso(valor1, localConteudo, localErro, localLoad){
             localConteudo.css("display","block"); 
         } catch(e){
             localConteudo.css("display","none");
-            localErro.html(erro.concat("HTTP 404: Recurso não encontrado.</span></div>"));
+            localErro.html(returnError("HTTP 404: Recurso não encontrado."));
         }
     })
     .fail(function(jqXHR){
         localConteudo.css("display","none");
         switch (jqXHR.status) {   
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Recurso não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Recurso não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -930,10 +935,10 @@ function getSemanticScholarRecurso(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {   
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Recurso não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Recurso não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -987,10 +992,10 @@ function getDoajArtigo(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {   
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Artigo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Artigo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1029,10 +1034,10 @@ function getDoajPeriodico(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {   
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Periódico não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Periódico não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1102,7 +1107,7 @@ function callbackPlos(data){
         localLoad.removeClass("loading");         
     } else {
         localConteudo.css("display","none");
-        localErro.html(erro.concat("HTTP 404: Artigo não encontrado.</span></div>"));
+        localErro.html(returnError("HTTP 404: Artigo não encontrado."));
         localLoad.removeClass("loading");
     }    
 }
@@ -1139,17 +1144,17 @@ function getBiorxivArtigo(valor1, localConteudo, localErro, localLoad){
             localConteudo.css("display","block");
         } catch(e){
             localConteudo.css("display","none");
-            localErro.html(erro.concat("HTTP 404: Artigo não encontrado.</span></div>"));
+            localErro.html(returnError("HTTP 404: Artigo não encontrado."));
         }
     })
     .fail(function(jqXHR){
         localConteudo.css("display","none");
         switch (jqXHR.status) {   
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Artigo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Artigo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1197,13 +1202,13 @@ function getGbifDado(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 400:
-                localErro.html(erro.concat("HTTP 404: Dado não encontrado.</span></div>"));
+                localErro.html(returnError("HTTP 404: Dado não encontrado."));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Dado não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Dado não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1274,13 +1279,13 @@ function getGbifOcorrencia(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 400:
-                localErro.html(erro.concat("HTTP 404: Ocorrência não encontrada.</span></div>"));
+                localErro.html(returnError("HTTP 404: Ocorrência não encontrada."));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Ocorrência não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Ocorrência não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1317,13 +1322,13 @@ function getGbifEspecie(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 400:
-                localErro.html(erro.concat("HTTP 404: Espécie não encontrada.</span></div>"));
+                localErro.html(returnError("HTTP 404: Espécie não encontrada."));
                 break;
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Espécie não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Espécie não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1362,10 +1367,10 @@ function getSketchfabModelo(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Modelo não encontrado.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Modelo não encontrado.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
@@ -1397,10 +1402,10 @@ function getSketchfabColecao(valor1, localConteudo, localErro, localLoad){
         localConteudo.css("display","none");
         switch (jqXHR.status) {
             case 404:
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Coleção não encontrada.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Coleção não encontrada.`));
                 break;
             default:                    
-                localErro.html(erro.concat("HTTP ").concat(jqXHR.status).concat(": Contate o Administrador do Sistema.</span></div>"));
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
                 break;
         }
     })
