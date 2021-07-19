@@ -1,6 +1,7 @@
 body,
-.dropdown-menu li a:hover {
-    background-color: #EEE;
+.dropdown-menu li a:hover,
+.btn-default.active {
+    background-color: #EEE !important;
 }
 
 body,
@@ -17,8 +18,13 @@ body {
     padding: 10px;
 }
 
-.row {
+.row,
+.btn-toolbar,
+.btn-toolbar .btn-group {
     margin-left: 0;
+}
+
+.row {
     margin-right: 0;
 }
 
@@ -48,7 +54,8 @@ body {
 
 .nav-tabs li.active a,
 a:hover,
-.dropdown-menu li a:hover {
+.dropdown-menu li a:hover,
+.btn-default {
     color: #1B1B1B !important;
 }
 
@@ -69,7 +76,10 @@ a:hover,
 .it,
 .info-content,
 .content-elemento > div:first-child,
-iframe {
+iframe,
+.img-responsive,
+video,
+.carousel-inner {
     border-radius: 4px;
 }
 
@@ -88,9 +98,13 @@ iframe {
     white-space: nowrap;
 }
 
-.content {
-    background-color: #FFF;
+.content {    
     padding: 20px;
+}
+
+.content,
+.btn-default:focus {
+    background-color: #FFF;
 }
 
 .btn-space {
@@ -181,11 +195,6 @@ textarea {
     resize: none;
 }
 
-.btn-toolbar,
-.btn-toolbar .btn-group {
-    margin-left: 0;
-}
-
 .info-content {    
     padding: 20px 20px 10px 20px;
 }
@@ -212,21 +221,23 @@ ul.info-note {
 
 .loading {
     background: rgba(255,255,255, 0.5) url(../img/loading.gif) center no-repeat;
-    bottom: 0;
-    left: 0;
+    bottom: 0;    
     opacity: 0.4;
-    right: 0;
-    top: 0;
+    right: 0;    
     z-index: 1;
 }
 
-.btn-default:focus {    
-    background-color: #FFF;
+.loading,
+.responsive-iframe1 iframe {
+    left: 0;
+    top: 0;
+}
+
+.btn-default:focus {
     border-color: #CCC;
 }
 
 .btn-default.active {
-    background-color: #EEE !important;
     border-color: #ADADAD !important;
 }
 
@@ -235,22 +246,60 @@ ul.info-note {
     position: relative;
 }
 .responsive-iframe1 iframe {
+    height: 100%;            
+}
+
+.responsive-iframe1 iframe,
+.zoom {
     position: absolute;
-    top: 0;
-    left: 0;
+}
+
+.responsive-iframe1 iframe,
+audio {
     width: 100%;
-    height: 100%;
 }
 
 iframe {
     border: none;
 }
 
-.box2 {
+.box2,
+.box3 {
     padding-left: 0;
     padding-right: 0;
 }
 
 hr {
     border-top: solid 1px #CCC;
+}
+
+audio {
+    background-color: #F1F3F4;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.img-audio {
+    border-radius: 4px 4px 0px 0px !important;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background: inherit;
+}
+
+.carousel-control {
+    opacity: 100%;
+}
+
+.carousel-control:hover {
+    color: #FFF !important;
+}
+
+.zoom {
+    bottom: 20px;
+    left: 20px;
+}
+
+.box3 {
+    border: solid 10px #FFF;
 }

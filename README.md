@@ -54,7 +54,15 @@
    - Atualização de brands;
    - GET de artigos e periódicos do DOAJ - Directory of Open Access Journals, utilizando requisições AJAX/JSON com jQuery para REST API (DOAJ API 2.0);
    - GET de dado, ocorrência e espécie do GBIF - Global Biodiversity Information Facility, utilizando requisições AJAX/JSON com jQuery para REST API (GBIF API 1.0).
-   
+
+   **Commit 8:**
+
+   - Atualização do README.md;
+   - Atualização sugerida por @bitebait para mensagem de erro;
+   - GET de livros do Google Books, utilizando requisições AJAX/JSON com jQuery para REST API (Google Books API 1.0).
+   - GET de itens do WDL - World Digital Library, utilizando requisições AJAX/JSON com jQuery para REST API (WDL API (IIIF Presentation 2.0)).
+   - Implementação de ferramenta de zoom em elementos do tipo imagem, utilizando o plugin jQuery Panzoom 3.2.2.
+
 ## Tecnologias
 
    **Front-end:**
@@ -62,8 +70,8 @@
    - **Linguagem:** HTML 5, CSS 3 e JSP (Scriptlets e JSTL)
    - **Fonte:** Font Awesome 5.15.3 e Google Fonts (Carrois Gothic)
    - **Framework:** Twitter Bootstrap 3.4.1
-   - **Biblioteca JS:** jQuery 3.4.1
-   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed, Dailymotion Data API, ERIC API, Semantic Scholar API, DOAJ API 2.0, PLOS Search API, bioRxiv API, GBIF API 1.0 e Sketchfab Data API 3.0.
+   - **Biblioteca JS:** jQuery 3.4.1 e jQuery Panzoom 3.2.2
+   - **API e relacionados:** XMLHttpRequest/AJAX, JSON/JSONP, Blogger API 3.0, YouTube Data API 3.0, oEmbed, Dailymotion Data API, Google Books API 1.0, ERIC API, Semantic Scholar API, DOAJ API 2.0, PLOS Search API, bioRxiv API, GBIF API 1.0, WDL API (IIIF Presentation 2.0) e Sketchfab Data API 3.0.
    - **Browser:** Google Chrome 90.0.4430.93 (64 bits) e Mozilla Firefox 88.0 (64 bits)
    
    **Back-end, Database, Infra e Outros:**

@@ -4,13 +4,8 @@ const apiKeyBg = "AIzaSyA_o09CgY0vrI1KvIxg0de8IRtNq3CS0Yg";
 const apiKeyYt = "AIzaSyBMLlrpMVcBIz4KDcVx45x2SZW3zKL9opA";
 
 // mensagem de erro
-const returnError = (errorMessage) => `<div class=\"alert alert-danger alert-dismissible\">
-                                            <i class=\"fas fa-exclamation-circle\"></i>
-                                            <button class=\"close\" data-dismiss=\"alert\" type=\"button\">
-                                                <span aria-hidden=\"true\">&times;</span>
-                                            </button>
-                                            <span>${errorMessage}</span>
-                                        </div> `;
+
+const returnError = (errorMessage) => `<div class=\"alert alert-danger alert-dismissible\"><i class=\"fas fa-exclamation-circle\"></i><button class=\"close\" data-dismiss=\"alert\" type=\"button\"><span aria-hidden=\"true\">&times;</span></button><span>${errorMessage}</span></div>`;
 
 // subcomponente
 
@@ -102,6 +97,18 @@ $("#novo-videos-dm").click(function () {
     $("#videos .content").append(videosDm);    
 });
 
+// novo: adiciona elemento (Livros: Google Books)
+
+let infoGb = "info-gb", infoNumberGb = 1;
+
+$("#novo-livros-gb").click(function () { 
+    if ($(("#info-gb").concat(infoNumberGb)).length) {
+        infoNumberGb++; 
+    }    
+    let livrosGb = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Livro: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoGb.concat(infoNumberGb)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoGb.concat(infoNumberGb)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoGb.concat(infoNumberGb)+0+" onclick=\"search('#"+infoGb.concat(infoNumberGb)+0+"','gb')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoGb.concat(infoNumberGb)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://books.google.com/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>http://books.google.com.br/books?id=[bookID]</sup></p><p class=\"info-title\"><strong>Exemplo > Livro ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>hmWCCwAAQBAJ</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#livros .content").append(livrosGb);
+});
+
 // novo: adiciona elemento (Leitura: ERIC)
 
 let infoEi = "info-ei", infoNumberEi = 1;
@@ -172,6 +179,18 @@ $("#novo-leitura-gf").click(function () {
     }    
     let leituraGf = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Dado: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button class=\"btn btn-default active dado-id\" type=\"button\">Dado</button><button class=\"btn btn-default ocorrencia-id\" type=\"button\">Ocorrência</button><button class=\"btn btn-default especie-id\" type=\"button\">Espécie</button></div><div class=\"btn-group\"><button aria-controls="+infoGf.concat(infoNumberGf)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoGf.concat(infoNumberGf)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoGf.concat(infoNumberGf)+0+" onclick=\"search('#"+infoGf.concat(infoNumberGf)+0+"','gf','.dado-id')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoGf.concat(infoNumberGf)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.gbif.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.gbif.org/dataset/[datasetID]<br><span>&bull;</span>https://www.gbif.org/occurrence/[occurrenceID]<br><span>&bull;</span>https://www.gbif.org/species/[speciesID]</p><p class=\"info-title\"><strong>Exemplo > Dado ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>4fa7b334-ce0d-4e88-aaae-2e0c138d049e</p><p class=\"info-title\"><strong>Exemplo > Ocorrência ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>1095554046</p><p class=\"info-title\"><strong>Exemplo > Espécie ID</strong></p><p class=\"info-item truncate\"><span>&bull;</span>5219426</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
     $("#leitura .content").append(leituraGf);
+});
+
+// novo: adiciona elemento (Leitura: WDL)
+
+let infoWdl = "info-wdl", infoNumberWdl = 1;
+
+$("#novo-leitura-wdl").click(function () {
+    if ($(("#info-wdl").concat(infoNumberGf)).length) { 
+        infoNumberWdl++;
+    }
+    let leituraWdl = "<div class=\"box1 it\"><div class=\"erro\"></div><div class=\"box1\"><input class=\"form-control truncate\" placeholder=\"Item: ID\" type=\"text\"></div><div class=\"btn-toolbar box1\"><div class=\"btn-group\"><button aria-controls="+infoWdl.concat(infoNumberWdl)+" aria-expanded=\"false\" class=\"btn btn-default info\" data-target=\"#"+infoWdl.concat(infoNumberWdl)+"\" data-toggle=\"collapse\" type=\"button\"><i class=\"fas fa-info-circle\"></i></button></div><div class=\"btn-group\"><button class=\"btn btn-default\" id="+infoWdl.concat(infoNumberWdl)+0+" onclick=\"search('#"+infoWdl.concat(infoNumberWdl)+0+"','wdl')\" type=\"button\"><i class=\"fas fa-search\"></i></button></div></div><div class=\"collapse\" id="+infoWdl.concat(infoNumberWdl)+"><div class=\"info-content\"><p class=\"info-title\"><strong>Website</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.wdl.org/</p><p class=\"info-title\"><strong>URL</strong></p><p class=\"info-item truncate\"><span>&bull;</span>https://www.wdl.org/pt/item/[itemID]/</p><p class=\"info-title\"><strong>Exemplo > Item ID (tipo)</strong></p><p class=\"info-item truncate\"><span>&bull;</span>9556 (diários)<br><span>&bull;</span>35 (filmes)<br><span>&bull;</span>195, 38 (imagens, fotografias)<br><span>&bull;</span>7502 (jornais)<br><span>&bull;</span>514 (livros)<br><span>&bull;</span>7369 (manuscritos)<br><span>&bull;</span>37 (mapas)<br><span>&bull;</span>628 (registros fonográficos)</p></div></div><div class=\"box1 content-elemento\"></div><div class=\"box1 btn-right\"><button class=\"btn btn-danger excluir\" type=\"button\"><i class=\"fas fa-trash-alt\"></i>Excluir</button></div></div>";
+    $("#leitura .content").append(leituraWdl);
 });
 
 // novo: adiciona elemento (Tecnologias: Sketchfab)
@@ -351,6 +370,9 @@ function search(id, elemento, tipo){
                     localErro.html(returnError("É necessário fornecer o ID da playlist para que a pesquisa seja realizada."));
                 }                        
                 break;
+            case "gb":
+                localErro.html(returnError("É necessário fornecer o ID do livro para que a pesquisa seja realizada."));
+                break;
             case "ei":
             case "sc":
                 localErro.html(returnError("É necessário fornecer o ID do recurso para que a pesquisa seja realizada."));
@@ -374,6 +396,9 @@ function search(id, elemento, tipo){
                 } else {
                     localErro.html(returnError("É necessário fornecer o ID da espécie para que a pesquisa seja realizada."));
                 }
+                break;
+            case "wdl":
+                localErro.html(returnError("É necessário fornecer o ID do item para que a pesquisa seja realizada.")); 
                 break;
             case "sf":
                 if(localButton1.hasClass("active")){
@@ -407,6 +432,9 @@ function search(id, elemento, tipo){
                     getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad);
                 }
                 break;
+            case "gb":
+                getGoogleBooksLivro(valor1, localConteudo, localErro, localLoad); 
+                break;
             case "ei":                                
                 getEricRecurso(valor1, localConteudo, localErro, localLoad);
                 break;
@@ -435,6 +463,9 @@ function search(id, elemento, tipo){
                     getGbifEspecie(valor1, localConteudo, localErro, localLoad);
                 }
                 break;
+            case "wdl":
+                getWorldDigitalLibraryItem(valor1, localConteudo, localErro, localLoad);
+                break;
             case "sf":
                 if(localButton1.hasClass("active")){
                     getSketchfabModelo(valor1, localConteudo, localErro, localLoad);
@@ -444,6 +475,22 @@ function search(id, elemento, tipo){
                 break;
         }                
     }        
+}
+
+// panzoom: zoom (in|out|reset) elemento
+
+function zoom(id, action){
+    $(id).panzoom({        
+        contain: "automatic",
+        minScale: 1
+    });
+    if(action === "zoom-in"){
+        $(id).panzoom("zoom");
+    } else if (action === "zoom-out"){
+        $(id).panzoom("zoom", true);
+    } else {
+        $(id).panzoom("reset");
+    }
 }
 
 // info: exibe/oculta info do elemento
@@ -804,6 +851,56 @@ function getDailymotionPlaylist(valor1, localConteudo, localErro, localLoad){
                 break;
             case 404:
                 localErro.html(returnError(`HTTP ${jqXHR.status}: Playlist não encontrada.`));
+                break;
+            default:                    
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
+}
+
+// funções (Google Books: retorna livro)
+
+let ngbEmbed = "livros-gb-embed", ngbNumberEmbed = 1;
+let ngbLogo = "livros-gb-logo", ngbNumberLogo = 1;
+let ngbTitulo = "livros-gb-titulo", ngbNumberTitulo = 1;
+let ngbDescricao = "livros-gb-descricao", ngbNumberDescricao = 1;
+let ngbUrl = "livros-gb-url", ngbNumberUrl = 1;
+let ngbAutor = "livros-gb-autor", ngbNumberAutor = 1;
+let ngbNomeEditora = "livros-gb-nome-editora", ngbNumberNomeEditora = 1;
+let ngbInfoEditora = "livros-gb-info-editora", ngbNumberInfoEditora = 1;
+
+function getGoogleBooksLivro(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://www.googleapis.com/books/v1/volumes/"+valor1, function(){})    
+    .done(function(data){
+        let autores = [];
+        for(let i = 0; i < data.volumeInfo.authors.length; i++){            
+            autores.push(data.volumeInfo.authors[i]);
+        }
+        if ($("[name=\"livros-gb-embed"+ngbNumberEmbed+"\"]").length) { 
+            ngbNumberEmbed++; 
+            ngbNumberLogo++;
+            ngbNumberTitulo++;
+            ngbNumberDescricao++;
+            ngbNumberUrl++;
+            ngbNumberAutor++;
+            ngbNumberNomeEditora++;
+            ngbNumberInfoEditora++; 
+        }
+        embed = "<img alt=\"\" class=\"img-responsive\" src=\"https://books.google.com/books/content/images/frontcover/"+valor1+"?fife=w200-h300\">";
+        logo = "<img alt=\"\" src=\"assets/img/google-books.png\">";      
+        conteudo = "<div class=\"box1 row\"><div class=\"box1 col-md-2 col-sm-12\"><input name="+ngbEmbed.concat(ngbNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+">"+embed+"</div><div class=\"box2 col-md-10 col-sm-12\"><div class=\"box1\"><input name="+ngbLogo.concat(ngbNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+ngbTitulo.concat(ngbNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.volumeInfo.title.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+ngbDescricao.concat(ngbNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.volumeInfo.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngbUrl.concat(ngbNumberUrl)+" placeholder=\"https://\" type=\"text\" value=\"http://books.google.com.br/books?id="+valor1+"\"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngbAutor.concat(ngbNumberAutor)+" placeholder=\"Autor(res)\" type=\"text\" value="+autores.join("; ").replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngbNomeEditora.concat(ngbNumberNomeEditora)+" placeholder=\"Editora\" type=\"text\" value="+data.volumeInfo.publisher.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+ngbInfoEditora.concat(ngbNumberInfoEditora)+" placeholder=\"Editora (info)\" type=\"text\" value="+data.volumeInfo.publishedDate+",&#160;"+data.volumeInfo.pageCount+"></div></div></div></div>"; 
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 503:
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Livro não encontrado.`));
                 break;
             default:                    
                 localErro.html(returnError(`HTTP ${jqXHR.status}: Contate o Administrador do Sistema.`));
@@ -1335,6 +1432,84 @@ function getGbifEspecie(valor1, localConteudo, localErro, localLoad){
     .always(function() {
         localLoad.removeClass("loading");          
     }); 
+}
+
+// funções (WDL: retorna item)        
+
+let nwdlEmbed = "leitura-sc-embed", nwdlNumberEmbed = 1; 
+let nwdlLogo = "leitura-sc-logo", nwdlNumberLogo = 1;
+let nwdlTitulo = "leitura-wdl-titulo", nwdlNumberTitulo = 1;
+let nwdlDescricao = "leitura-wdl-descricao", nwdlNumberDescricao = 1;
+let nwdlUrl = "leitura-wdl-url", nwdlNumberUrl = 1;
+let nwdlAutor = "leitura-wdl-autor", nwdlNumberAutor = 1;
+let nwdlInstituicao = "leitura-wdl-instituicao", nwdlNumberInstituicao = 1;
+let nwdlTipo = "leitura-wdl-tipo", nwdlNumberTipo = 1;       
+
+let carouselWdl = "carousel-wdl", carouselNumberWdl = 1;
+
+let panzoomWdl = "panzoom-wdl", panzoomNumberWdl = 1;
+
+function getWorldDigitalLibraryItem(valor1, localConteudo, localErro, localLoad){
+    $.getJSON("https://www.wdl.org/pt/item/"+valor1+"/iiif/manifest.json", function(){})    
+    .done(function(data){ 
+        if(data.metadata[0].value === "Filmes"){   
+            embed = "<div class=\"box1 col-md-6 col-sm-12\"><div class=\"embed-responsive embed-responsive-4by3\"><video class=\"embed-responsive-item\" controls><source src=\""+data.rendering[0]["@id"]+"\" type=\"video/mp4\"></video></div>";
+        } else if(data.metadata[0].value === "Registros Fonográficos") {
+            embed = "<div class=\"box1 col-md-6 col-sm-12\"><img alt=\"\" class=\"img-audio img-responsive\" src=\""+data.thumbnail["@id"]+"\"><audio controls><source src=\""+data.rendering[0]["@id"]+"\" type=\"audio/mpeg\"></audio>";
+        } else if((data.metadata[0].value === "Diários") || (data.metadata[0].value === "Manuscritos") || (data.metadata[0].value === "Livros") || (data.metadata[0].value === "Jornais")){
+            embed = "<div class=\"box1 col-md-6 col-sm-12\"><div class=\"box1 responsive-iframe1\"><iframe allowfullscreen src=\""+data.rendering[0]["@id"]+"\"></iframe></div>";
+        } else {     
+            if(data.sequences[0].canvases.length > 1) {
+                let index = [], imagens = [];
+                if ($(("#carousel-wdl").concat(carouselNumberWdl)).length) {
+                    carouselNumberWdl++;
+                }                
+                for(let i = 0; i < data.sequences[0].canvases.length; i++){
+                    if(i === 0){
+                        index.push("<li class=\"active\" data-slide-to=\""+[i]+"\" data-target=\"#"+carouselWdl.concat(carouselNumberWdl)+"\"></li>");
+                        imagens.push("<div class=\"item active\"><img alt=\"\" class=\"img-responsive\" src=\""+data.sequences[0].canvases[i].images[0].resource["@id"]+"\"></div>");          
+                    } else {
+                        index.push("<li data-slide-to=\""+[i]+"\" data-target=\"#"+carouselWdl.concat(carouselNumberWdl)+"\"></li>");
+                        imagens.push("<div class=\"item\"><img alt=\"\" class=\"img-responsive\" src=\""+data.sequences[0].canvases[i].images[0].resource["@id"]+"\"></div>");
+                    }
+                }
+                embed = "<div class=\"box1 col-md-6 col-sm-12\"><div id=\""+carouselWdl.concat(carouselNumberWdl)+"\" class=\"carousel slide\" data-interval=\"false\" data-wrap=\"false\"><ol class=\"carousel-indicators\">"+index.join("")+"</ol><div class=\"carousel-inner\">"+imagens.join("")+"</div><a class=\"carousel-control left\" data-slide=\"prev\" href=\"#"+carouselWdl.concat(carouselNumberWdl)+"\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a><a class=\"carousel-control right\" data-slide=\"next\" href=\"#"+carouselWdl.concat(carouselNumberWdl)+"\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a></div>";           
+            } else {
+                if ($(("#panzoom-wdl").concat(panzoomNumberWdl)).length) {
+                    panzoomNumberWdl++;
+                }
+                embed = "<div class=\"box3 col-md-6 col-sm-12\"><div id=\""+panzoomWdl.concat(panzoomNumberWdl)+"\"><img alt=\"\" class=\"img-responsive\" src=\""+data.sequences[0].canvases[0].images[0].resource["@id"]+"\"></div><div class=\"btn-toolbar\"><div class=\"btn-group zoom\"><button class=\"btn btn-default\" onclick=\"zoom('#"+panzoomWdl.concat(panzoomNumberWdl)+"','zoom-in')\" type=\"button\"><i class=\"fas fa-search-plus\"></i></button><button class=\"btn btn-default\" onclick=\"zoom('#"+panzoomWdl.concat(panzoomNumberWdl)+"','zoom-out')\" type=\"button\"><i class=\"fas fa-search-minus\"></i></button><button class=\"btn btn-default\" onclick=\"zoom('#"+panzoomWdl.concat(panzoomNumberWdl)+"','reset')\" type=\"button\"><i class=\"fas fa-undo-alt\"></i></button></div></div>";
+            }     
+        }
+        if ($("[name=\"leitura-wdl-embed"+nwdlNumberEmbed+"\"]").length) { 
+            nwdlNumberEmbed++; 
+            nwdlNumberLogo++;
+            nwdlNumberTitulo++;
+            nwdlNumberDescricao++;
+            nwdlNumberUrl++;
+            nwdlNumberAutor++;
+            nwdlNumberInstituicao++;
+            nwdlNumberTipo++; 
+        }
+        logo = "<img alt=\"\" src=\"assets/img/world-digital-library.png\">";
+        conteudo = "<div class=\"box1 row\">"+embed+"<input name="+nwdlEmbed.concat(nwdlNumberEmbed)+" type=\"hidden\" value="+embed.replace(/\s/g,"&#160;").replaceAll(">","&#62;")+"></div><div class=\"box2 col-md-6 col-sm-12\"><div class=\"box1\"><input name="+nwdlLogo.concat(nwdlNumberLogo)+" type=\"hidden\" value="+logo.replace(/\s/g,"&#160;").replace(">","&#62;")+">"+logo+"</div><div class=\"box1\"><input class=\"form-control truncate\" name="+nwdlTitulo.concat(nwdlNumberTitulo)+" placeholder=\"Título\" type=\"text\" value="+data.label.replace(/\s/g,"&#160;")+"></div><div class=\"box1\"><textarea class=\"form-control\" name="+nwdlDescricao.concat(nwdlNumberDescricao)+" placeholder=\"Descrição\" rows=\"8\">"+data.description+"</textarea></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nwdlUrl.concat(nwdlNumberUrl)+" placeholder=\"https://\" type=\"text\" value="+data.thumbnail.service["@id"]+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nwdlAutor.concat(nwdlNumberAutor)+" placeholder=\"Autor\" type=\"text\" value="+data.metadata[2].value.replace(/\s/g,"&#160;")+"></div></div><div class=\"row\"><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nwdlInstituicao.concat(nwdlNumberInstituicao)+" placeholder=\"Instituição\" type=\"text\" value="+data.metadata[1].value.replace(/\s/g,"&#160;")+"></div><div class=\"box1 col-md-6 col-sm-12\"><input class=\"form-control truncate\" name="+nwdlTipo.concat(nwdlNumberTipo)+" placeholder=\"Tipo de item\" type=\"text\" value="+data.metadata[0].value.replace(/\s/g,"&#160;")+"></div></div></div></div>";
+        localConteudo.html(conteudo);
+        localConteudo.css("display","block");
+    })
+    .fail(function(jqXHR){
+        localConteudo.css("display","none");
+        switch (jqXHR.status) {   
+            case 404:
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Item não encontrado.`));
+                break;
+            default:                    
+                localErro.html(returnError(`HTTP ${jqXHR.status}: Item não encontrado.`));
+                break;
+        }
+    })
+    .always(function() {
+        localLoad.removeClass("loading");  
+    });     
 }
 
 // funções (Sketchfab: retorna modelo)
