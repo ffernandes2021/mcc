@@ -1155,7 +1155,7 @@ let npsNomePeriodico = "leitura-ps-nome-periodico", npsNumberNomePeriodico = 1;
 function getPlosArtigo(valor1){
     $.ajax({
         dataType: "jsonp",        
-        url: "http://api.plos.org/search?q=id:"+valor1+"&fl=id,title,author,abstract,journal&wt=json&api_key=qKpye1hapVdZuXshd-tt&json.wrf=callbackPlos",
+        url: "https://api.plos.org/search?q=id:"+valor1+"&fl=id,title,author,abstract,journal&wt=json&api_key=qKpye1hapVdZuXshd-tt&json.wrf=callbackPlos",
         type: "GET"
     });
 }
